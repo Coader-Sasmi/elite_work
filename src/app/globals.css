@@ -1,21 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: #746465 transparent;
+  scroll-behavior: smooth;
+}
+/* //? MUI Styling */
+
+.mui-message-box .MuiInputAdornment-positionStart svg {
+  margin-top: -4.5rem !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+::-webkit-scrollbar {
+  width: 0.25em;
+  height: 0.25em;
+}
+::-webkit-scrollbar-thumb {
+  background: #5b50a1;
+  border-radius: 10em;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@layer components {
+  .main-container {
+    @apply container mx-auto px-6;
+  }
+  .heading-style {
+    @apply font-semibold text-3xl tracking-wider;
+  }
+  .delay-animation {
+    @apply !transition-all !ease-in-out !duration-500;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* Footer section Animation */
+
+.zoom {
+  animation: scale 25s linear infinite;
+}
+
+@keyframes scale {
+  50% {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+  }
 }
