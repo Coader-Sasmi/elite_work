@@ -24,7 +24,7 @@ export default function Navbar() {
       <div className="main-container flex justify-center font-bold items-center py-2 text-tertiary text-xs tracking-wide uppercase ">
         Available exclusively in Bangalore, Karnataka.
       </div>
-      <nav className=" sticky top-0 z-[9000] transition-all duration-100 ease-in-out border-t border-secondary shadow-sm">
+      <nav className=" sticky top-0 z-[999] bg-white transition-all duration-100 ease-in-out border-t border-secondary shadow-sm">
         <ResponsiveNav openDrawer={openDrawer} setOpenDrawer={setOpenDrawer} />
 
         <section className="main-container items-center justify-between py-1 lg:flex w-full">
