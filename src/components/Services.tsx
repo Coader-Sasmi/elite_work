@@ -5,7 +5,7 @@ export default function Services() {
     {
       key: "1",
       title: "Conceptual Design",
-      desc: " Developing initial design concepts and ideas based on client input and project parameters.",
+      desc: "Developing initial design concepts and ideas based on client input and project parameters.",
       subDes1: "Feasibility Studies",
       subDes2: "Conceptual Design",
       subDes3: "Design Development",
