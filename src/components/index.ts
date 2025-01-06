@@ -4,3 +4,4 @@ export { default as Footer } from "./Footer";
 export { default as HeroSec } from "./HeroSec";
 export { default as Navbar } from "./Navbar";
 export { default as ResponsiveNav } from "./ResponsiveNav";
+export { default as Services } from "./Services";
