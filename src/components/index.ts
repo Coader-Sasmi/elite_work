@@ -6,3 +6,4 @@ export { default as Navbar } from "./Navbar";
 export { default as Process } from "./Process";
 export { default as ResponsiveNav } from "./ResponsiveNav";
 export { default as Services } from "./Services";
+export { default as ShowCase } from "./ShowCase";
