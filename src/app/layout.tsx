@@ -1,4 +1,4 @@
-import { Footer, Navbar } from "@/components";
+import { Footer, HeroSec, Navbar } from "@/components";
 import type { Metadata } from "next";
 import Head from "next/head";
 import { JSX } from "react";
@@ -33,6 +33,7 @@ export default function RootLayout({
       </Head>
       <body>
         <Navbar />
+        <HeroSec />
         {children}
         <Footer />
       </body>
