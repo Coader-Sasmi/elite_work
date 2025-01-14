@@ -32,8 +32,13 @@ export default function RootLayout({
         <meta property="og:image" content={ogImage} />
       </Head>
       <body>
-        <Navbar />
-        <HeroSec />
+        <div
+          className="flex h-screen w-full cursor-grab flex-col bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(hero.jpg)` }}
+        >
+          <Navbar />
+          <HeroSec />
+        </div>
         {children}
         <Footer />
       </body>
