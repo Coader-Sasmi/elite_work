@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { BsArrowRight } from "react-icons/bs";
 import { LuMoveRight } from "react-icons/lu";
 
@@ -8,10 +9,15 @@ export default function HeroSec() {
     <>
       <section className="!flex h-fit items-center md:h-[calc(100vh-3rem)]">
         <div className="main-container flex flex-col gap-10 justify-start lg:py-44 py-24  w-full h-full text-white">
-          <div className="flex gap-3 items-center">
+          <motion.div
+            className="flex gap-3 items-center"
+            initial={{ y: 50, opacity: 0.5 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ ease: "easeOut", duration: 1.5 }}
+          >
             <LuMoveRight />
-            <h5 className="font-medium ">Inspired Interiors</h5>
-          </div>
+            <h5 className="font-medium">Inspired Interiors</h5>
+          </motion.div>
           <h1 className="lg:text-7xl text-3xl font-semibold">
             Designing your dream spaces, <br />
             one room at a time

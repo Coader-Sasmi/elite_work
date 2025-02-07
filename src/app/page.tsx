@@ -1,13 +1,13 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
 
-import { AboutUs, Process, Services, ShowCase } from "@/components";
+import { Process, Services, ShowCase } from "@/components";
 
 export default function Home() {
   return (
     <>
       {/* <HeroSec /> */}
-      <AboutUs />
+      {/* <AboutUs /> */}
       <Services />
       <ShowCase />
       <Process />
