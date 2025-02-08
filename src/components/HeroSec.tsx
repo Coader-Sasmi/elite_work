@@ -7,7 +7,7 @@ import { LuMoveRight } from "react-icons/lu";
 export default function HeroSec() {
   return (
     <>
-      <section className="!flex h-fit items-center md:h-[calc(100vh-3rem)]">
+      <section className="!flex h-fit items-center">
         <div className="main-container flex flex-col gap-10 justify-start lg:py-44 py-24  w-full h-full text-white">
           <motion.div
             className="flex gap-3 items-center"
@@ -22,19 +22,29 @@ export default function HeroSec() {
             Designing your dream spaces, <br />
             one room at a time
           </h1>
-          <p className="font-semibold text-xl">
+          <motion.p
+            className="font-semibold text-xl"
+            initial={{ y: 50, opacity: 0.5 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ ease: "easeOut", duration: 1.5, delay: 0.5 }}
+          >
             We specialize in creating personalized, functional, and stylish{" "}
             <br />
             interiors that reflect your unique vision.
-          </p>
-          <div className="flex flex-row md:gap-8 gap-4">
+          </motion.p>
+          <motion.div
+            className="flex flex-row md:gap-8 gap-4"
+            initial={{ y: 50, opacity: 0.5 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ ease: "easeOut", duration: 1.5, delay: 1 }}
+          >
             <button className="flex items-center gap-3 bg-gray-600 py-3 px-4 font-bold w-fit">
               Explore More <BsArrowRight />
             </button>
             <button className="flex items-center gap-3 text-gray-600 bg-white py-3 px-4 font-bold w-fit">
               View Projects <BsArrowRight />
             </button>
-          </div>
+          </motion.div>
         </div>
       </section>
     </>

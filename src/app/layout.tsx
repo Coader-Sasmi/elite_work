@@ -33,7 +33,7 @@ export default function RootLayout({
       </Head>
       <body>
         <div
-          className="flex h-screen w-full cursor-grab flex-col bg-cover bg-center bg-no-repeat"
+          className="flex w-full cursor-grab flex-col bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(hero.jpg)` }}
         >
           <Navbar />
