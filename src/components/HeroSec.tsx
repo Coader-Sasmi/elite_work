@@ -8,7 +8,7 @@ export default function HeroSec() {
   return (
     <>
       <section className="!flex h-fit items-center">
-        <div className="main-container flex flex-col gap-10 justify-start lg:py-44 py-24  w-full h-full text-white">
+        <div className="main-container flex flex-col gap-10 justify-start lg:py-40 py-24  w-full h-full text-white">
           <motion.div
             className="flex gap-3 items-center"
             initial={{ y: 50, opacity: 0.5 }}
