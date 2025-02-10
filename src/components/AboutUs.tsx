@@ -1,26 +1,26 @@
-import { Accordion } from ".";
-
 export default function AboutUs() {
-  const NumberArr = [
-    {
-      key: "1",
-      number: "64",
-      desc: `Clients Around the World`,
-    },
-    {
-      key: "2",
-      number: "124",
-      desc: "Projects Completed",
-    },
-    {
-      key: "3",
-      number: "244K",
-      desc: "Square Feet",
-    },
-  ];
+  // const NumberArr = [
+  //   {
+  //     key: "1",
+  //     number: "64",
+  //     desc: `Clients Around the World`,
+  //   },
+  //   {
+  //     key: "2",
+  //     number: "124",
+  //     desc: "Projects Completed",
+  //   },
+  //   {
+  //     key: "3",
+  //     number: "244K",
+  //     desc: "Square Feet",
+  //   },
+  // ];
   return (
     <aside className="main-container py-10 flex flex-col gap-10">
-      <section className="flex flex-col gap-6 justify-center items-center">
+      <section></section>
+      <section></section>
+      {/* <section className="flex flex-col gap-6 justify-center items-center">
         <div className="flex justify-center items-center">
           <div className="md:w-32 w-16 h-[0.01rem] bg-gray-400"></div>
           <div className="text-gray-400 px-4">ABOUT US</div>
@@ -59,7 +59,7 @@ export default function AboutUs() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
     </aside>
   );
 }

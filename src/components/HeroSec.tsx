@@ -38,12 +38,44 @@ export default function HeroSec() {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ ease: "easeOut", duration: 1.5, delay: 1 }}
           >
-            <button className="flex items-center gap-3 bg-gray-600 py-3 px-4 font-bold w-fit">
-              Explore More <BsArrowRight />
-            </button>
-            <button className="flex items-center gap-3 text-gray-600 bg-white py-3 px-4 font-bold w-fit">
-              View Projects <BsArrowRight />
-            </button>
+            <motion.div
+              whileHover="hover"
+              className="relative w-40 cursor-pointer overflow-hidden p-5 bg-gray-600"
+            >
+              <motion.div
+                className="absolute inset-0 bg-secondary whitespace-nowrap"
+                initial={{ width: "0%" }}
+                variants={{
+                  hover: {
+                    width: "100%",
+                    transition: { duration: 0.4, ease: "easeInOut" },
+                  },
+                }}
+              >
+                <button className="relative z-10 flex gap-3 items-center font-semibold px-4 py-2">
+                  Explore More <BsArrowRight />
+                </button>
+              </motion.div>
+            </motion.div>
+            <motion.div
+              whileHover="hover"
+              className="relative w-40 cursor-pointer overflow-hidden p-5 bg-secondary"
+            >
+              <motion.div
+                className="absolute inset-0 bg-gray-600 whitespace-nowrap"
+                initial={{ width: "0%" }}
+                variants={{
+                  hover: {
+                    width: "100%",
+                    transition: { duration: 0.4, ease: "easeInOut" },
+                  },
+                }}
+              >
+                <button className="relative z-10 flex gap-3 items-center font-semibold px-4 py-2 text-white">
+                  View Projects <BsArrowRight />
+                </button>
+              </motion.div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
