@@ -40,7 +40,7 @@ export default function HeroSec() {
           >
             <motion.div
               whileHover="hover"
-              className="relative w-40 cursor-pointer overflow-hidden p-5 bg-gray-600"
+              className="relative w-40 cursor-pointer overflow-hidden p-5 bg-quaternary"
             >
               <motion.div
                 className="absolute inset-0 bg-secondary whitespace-nowrap"
@@ -62,7 +62,7 @@ export default function HeroSec() {
               className="relative w-40 cursor-pointer overflow-hidden p-5 bg-secondary"
             >
               <motion.div
-                className="absolute inset-0 bg-gray-600 whitespace-nowrap"
+                className="absolute inset-0 bg-quaternary whitespace-nowrap"
                 initial={{ width: "0%" }}
                 variants={{
                   hover: {
