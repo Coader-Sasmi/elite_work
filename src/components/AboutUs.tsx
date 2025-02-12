@@ -22,7 +22,7 @@ export default function AboutUs() {
         <section className="relative w-full">
           <div className="flex ">
             <img src="./about_img_1.jpg" alt="image" className="" />
-            <div className="absolute flex items-center gap-3 -rotate-90 right-0 top-1/4 ">
+            <div className="absolute hidden md:flex items-center gap-3 -rotate-90 right-0 top-1/4 ">
               <motion.div
                 whileHover="hover"
                 className="relative rounded-full overflow-hidden p-6 bg-quaternary "
@@ -48,8 +48,8 @@ export default function AboutUs() {
             </div>
           </div>
           <div className="absolute bg-quaternary rounded-full border-[0.4rem] border-white right-1/2 z-10 top-2/3 shadow-md">
-            <p className="text-white text-center p-7 font-semibold">
-              <span className="text-3xl">15+</span>
+            <p className="text-white text-center md:p-7 p-5 font-semibold">
+              <span className="md:text-3xl text-xl">15+</span>
               <br />
               <span>
                 Years Of <br /> Experience
@@ -59,14 +59,19 @@ export default function AboutUs() {
           <img
             src="./about_img_2.jpg"
             alt="image"
-            className="absolute right-0 top-2/3"
+            className="absolute right-0 top-2/3 w-56 md:w-auto"
           />
         </section>
-        <section className="w-full flex flex-col gap-10">
-          <h1 className="flex gap-3 items-center text-quaternary">
+        <section className="w-full flex flex-col gap-10 pt-16 md:pt-0">
+          <motion.div
+            className="flex gap-3 items-center text-quaternary"
+            initial={{ y: 50, opacity: 0.5 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ ease: "easeOut", duration: 1.5 }}
+          >
             <CgArrowLongRightL />
-            <span className="">About Us</span>
-          </h1>
+            <h5 className="font-medium">About Us</h5>
+          </motion.div>
           <h1 className="text-4xl font-semibold">
             Our passion for design, your
             <br /> <span className="text-quaternary">vision realized</span>
@@ -76,7 +81,12 @@ export default function AboutUs() {
             your vision and bring it to life with thoughtful attention to
             detail. Whether it’s transforming a single room or an entire home.
           </p>
-          <div className="flex justify-between w-full">
+          <motion.div
+            className="flex md:flex-row flex-col-reverse gap-5 justify-between w-full"
+            initial={{ y: 50, opacity: 0.5 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ ease: "easeOut", duration: 1.5, delay: 0.5 }}
+          >
             <div className="flex flex-col gap-4 ">
               <div className="flex items-center gap-3">
                 <div className="bg-quaternary rounded-full p-1 text-white">
@@ -146,7 +156,7 @@ export default function AboutUs() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </section>
       </aside>
     </>
