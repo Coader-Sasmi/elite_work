@@ -29,6 +29,28 @@ export default function ChooseUs() {
       delayTime: "",
     },
   ];
+  const ImgArr = [
+    {
+      img: "./why_choose_1.jpg",
+      class: "md:col-span-7 col-span-12",
+      imgC: "w-full h-full",
+    },
+    {
+      img: "./why_choose_2.jpg",
+      class: "md:col-span-5 col-span-12",
+      imgC: "w-full h-full",
+    },
+    {
+      img: "./why_choose_3.jpg",
+      class: "md:col-span-8 col-span-12",
+      imgC: "w-full h-full",
+    },
+    {
+      img: "./why_choose_4.jpg",
+      class: "md:col-span-4 col-span-12",
+      imgC: "w-full h-full",
+    },
+  ];
   return (
     <aside className="main-container py-10 flex lg:flex-row items-center flex-col gap-10">
       <section className="w-full flex flex-col gap-10 pt-16 md:pt-0">
@@ -87,7 +109,19 @@ export default function ChooseUs() {
           </motion.div>
         ))}
       </section>
-      <section className="w-full"></section>
+      <section className="w-full">
+        <div className="grid grid-cols-12 gap-5">
+          {ImgArr?.map((curElm, i) => (
+            <div key={i} className={`${curElm?.class}`}>
+              <img
+                src={curElm?.img}
+                alt="image"
+                className={`w-auto h-auto ${curElm?.imgC}`}
+              />
+            </div>
+          ))}
+        </div>
+      </section>
     </aside>
   );
 }
