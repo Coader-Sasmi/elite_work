@@ -2,27 +2,29 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { BsDoorOpen } from "react-icons/bs";
 import { CgArrowLongRightL } from "react-icons/cg";
-import { FaPhoneAlt } from "react-icons/fa";
+import { GiWoodenChair } from "react-icons/gi";
+import { TbSofa } from "react-icons/tb";
 
 export default function ChooseUs() {
   const ChooseUsArr = [
     {
-      icon: "",
+      icon: <BsDoorOpen className="text-2xl" />,
       title: "Tailored Design Solutions",
       subTitle:
         "We provide personalized interior design services that reflect your unique vision and lifestyle.",
       delayTime: "",
     },
     {
-      icon: "",
+      icon: <TbSofa className="text-2xl" />,
       title: "Seamless Project Management",
       subTitle:
         " We handle the entire design process, from concept to completion, with flawless execution.",
       delayTime: "",
     },
     {
-      icon: "",
+      icon: <GiWoodenChair className="text-2xl" />,
       title: "Client-Centered Collaboration",
       subTitle:
         "Your input is valued throughout the entire process, ensuring your vision is fully realized.",
@@ -83,7 +85,7 @@ export default function ChooseUs() {
               <div className="flex items-center gap-5">
                 <motion.div
                   whileHover="hover"
-                  className="relative rounded-full overflow-hidden p-5 bg-quaternary "
+                  className="relative rounded-full overflow-hidden p-6 bg-gray-200 "
                 >
                   <motion.div
                     className="absolute inset-0 bg-secondary "
@@ -95,8 +97,8 @@ export default function ChooseUs() {
                       },
                     }}
                   >
-                    <p className="relative z-10 p-2 ">
-                      <FaPhoneAlt className="text-white text-xl" />
+                    <p className="relative z-10 p-3 text-quaternary">
+                      {curElm?.icon}
                     </p>
                   </motion.div>
                 </motion.div>
