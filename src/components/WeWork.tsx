@@ -36,7 +36,7 @@ export default function WeWork() {
     },
   ];
   return (
-    <aside className="bg-secondary h-screen">
+    <aside className="bg-secondary">
       <section className="main-container py-10 flex flex-col gap-10">
         <section className="w-full flex flex-col gap-10 ">
           <motion.div
