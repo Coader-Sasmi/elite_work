@@ -4,8 +4,35 @@
 import { motion } from "framer-motion";
 import { BsArrowRight } from "react-icons/bs";
 import { CgArrowLongRightL } from "react-icons/cg";
+import { MdArrowRightAlt } from "react-icons/md";
 
 export default function Services() {
+  const serviceArr = [
+    {
+      image: "./service_1.jpg",
+      title: "Residential Interior Design",
+      subTitle:
+        "We create personalized living spaces that reflect your style and functional needs.",
+    },
+    {
+      image: "./service_2.jpg",
+      title: "Commercial Interior Design",
+      subTitle:
+        "Enhancing business environments with professional, functional, and aesthetically.",
+    },
+    {
+      image: "./service_3.jpg",
+      title: "Furniture And Decor Selection",
+      subTitle:
+        "Our experts help you choose the perfect furniture and decor complement your style.",
+    },
+    {
+      image: "./service_1.jpg",
+      title: "Residential Interior Design",
+      subTitle:
+        "We create personalized living spaces that reflect your style and functional needs.",
+    },
+  ];
   return (
     <aside className="main-container py-10 flex flex-col gap-10">
       <section className="w-full flex flex-col gap-10">
@@ -28,6 +55,23 @@ export default function Services() {
             your unique needs. From concept development to final installation.
           </p>
         </div>
+      </section>
+      <section className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6">
+        {serviceArr?.map((curElm, i) => (
+          <div
+            key={i}
+            className="relative flex w-auto h-[30rem] flex-col bg-cover bg-center"
+            style={{ backgroundImage: `url(${curElm?.image})` }}
+          >
+            <div className="absolute delay-animation right-5 top-5 rounded-full -rotate-45 bg-quaternary text-white p-1 hover:rotate-0 hover:bg-secondary ">
+              <MdArrowRightAlt className="text-4xl" />
+            </div>
+            <div className="flex flex-col gap-3 justify-end items-start font-semibold h-full w-full text-white bg-black/40 bg-blend-overlay p-8">
+              <h1 className="text-xl">{curElm?.title}</h1>
+              <p>{curElm?.subTitle}</p>
+            </div>
+          </div>
+        ))}
       </section>
       <section className="flex justify-center items-center">
         <motion.div

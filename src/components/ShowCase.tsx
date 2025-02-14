@@ -3,55 +3,55 @@ export default function ShowCase() {
   const slideSection = [
     {
       id: 1,
-      image: "./Hero_1.jpg",
+      // image: "./Hero_1.jpg",
       col: "col-span-2",
       row: "row-span-2",
     },
     {
       id: 2,
-      image: "./Hero_2.jpg",
+      // image: "./Hero_2.jpg",
       col: "col-span-1",
       row: "row-span-1",
     },
     {
       id: 3,
-      image: "./Hero_3.jpg",
+      // image: "./Hero_3.jpg",
       col: "col-span-1",
       row: "row-span-1",
     },
     {
       id: 4,
-      image: "./Hero_1.jpg",
+      // image: "./Hero_1.jpg",
       col: "col-span-1",
       row: "row-span-1",
     },
     {
       id: 5,
-      image: "./Hero_2.jpg",
+      // image: "./Hero_2.jpg",
       col: "col-span-1",
       row: "row-span-1",
     },
     {
       id: 6,
-      image: "./Hero_3.jpg",
+      // image: "./Hero_3.jpg",
       col: "col-span-1",
       row: "row-span-2",
     },
     {
       id: 7,
-      image: "./Hero_1.jpg",
+      // image: "./Hero_1.jpg",
       col: "col-span-1",
       row: "row-span-2",
     },
     {
       id: 8,
-      image: "./Hero_2.jpg",
+      // image: "./Hero_2.jpg",
       col: "col-span-2",
       row: "row-span-1",
     },
     {
       id: 9,
-      image: "./Hero_3.jpg",
+      // image: "./Hero_3.jpg",
       col: "col-span-2",
       row: "row-span-1",
     },
@@ -108,11 +108,11 @@ export default function ShowCase() {
         <div className="grid grid-cols-4 grid-rows-6 gap-2 h-[70rem]">
           {slideSection.map((item) => (
             <div key={item.id} className={`${item.col} ${item.row}`}>
-              <img
+              {/* <img
                 src={item.image}
                 alt="loading"
                 className="w-full h-full object-cover"
-              />
+              /> */}
             </div>
           ))}
         </div>
