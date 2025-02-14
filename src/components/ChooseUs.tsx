@@ -66,7 +66,7 @@ export default function ChooseUs() {
             <CgArrowLongRightL />
             <h5 className="font-medium">Why Choose Us</h5>
           </motion.div>
-          <h1 className="text-4xl font-semibold">
+          <h1 className="text-5xl font-semibold">
             A behind the scenes look at
             <br /> <span className="text-quaternary">our agency</span>
           </h1>

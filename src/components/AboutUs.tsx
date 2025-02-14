@@ -72,7 +72,7 @@ export default function AboutUs() {
             <CgArrowLongRightL />
             <h5 className="font-medium">About Us</h5>
           </motion.div>
-          <h1 className="text-4xl font-semibold">
+          <h1 className="text-5xl font-semibold">
             Our passion for design, your
             <br /> <span className="text-quaternary">vision realized</span>
           </h1>

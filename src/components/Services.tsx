@@ -46,7 +46,7 @@ export default function Services() {
           <h5 className="font-medium">Our Services</h5>
         </motion.div>
         <div className="flex lg:flex-row flex-col gap-8">
-          <h1 className="text-4xl font-semibold w-full">
+          <h1 className="text-5xl font-semibold w-full">
             Innovative design services for
             <br /> <span className="text-quaternary">every need</span>
           </h1>
