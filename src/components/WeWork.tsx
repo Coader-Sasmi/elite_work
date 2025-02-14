@@ -7,6 +7,7 @@ import { CgArrowLongRightL } from "react-icons/cg";
 import { GoStopwatch } from "react-icons/go";
 import { HiOutlineLightBulb } from "react-icons/hi";
 import { MdOutlineTableRestaurant } from "react-icons/md";
+import Slider from "react-slick";
 
 export default function WeWork() {
   const weWorkArr = [
@@ -35,8 +36,56 @@ export default function WeWork() {
         "After completing project we conduct a thorough walkthrough with you to review the space.",
     },
   ];
+  const logoArr = [
+    { image: "./company_logo_1.png" },
+    { image: "./company_logo_2.png" },
+    { image: "./company_logo_3.png" },
+    { image: "./company_logo_4.png" },
+    { image: "./company_logo_5.png" },
+  ];
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 500,
+    cssEase: "linear",
+    autoplaySpeed: 4000,
+    pauseOnHover: false,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 940,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          arrows: false,
+        },
+      },
+      {
+        breakpoint: 760,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          arrows: false,
+        },
+      },
+    ],
+  };
   return (
-    <aside className="bg-secondary">
+    <aside className="bg-secondary py-10">
       <section className="main-container py-10 flex flex-col gap-10">
         <section className="w-full flex flex-col gap-10 ">
           <motion.div
@@ -69,6 +118,13 @@ export default function WeWork() {
           ))}
         </section>
         <div className="w-full bg-quaternary h-[0.01rem]"></div>
+        <Slider {...settings}>
+          {logoArr.map((curElm, i) => (
+            <div key={i}>
+              <img src={curElm?.image} alt="image" className="w-56 h-auto" />
+            </div>
+          ))}
+        </Slider>
       </section>
     </aside>
   );
