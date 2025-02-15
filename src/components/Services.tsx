@@ -50,18 +50,26 @@ export default function Services() {
             Innovative design services for
             <br /> <span className="text-quaternary">every need</span>
           </h1>
-          <p className="w-full">
+          <motion.p
+            className="w-full"
+            initial={{ y: 50, opacity: 0.5 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ ease: "easeOut", duration: 2 }}
+          >
             We offer a range of bespoke interior design services tailored to
             your unique needs. From concept development to final installation.
-          </p>
+          </motion.p>
         </div>
       </section>
       <section className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6">
         {serviceArr?.map((curElm, i) => (
-          <div
+          <motion.div
             key={i}
             className="relative flex w-auto h-[30rem] flex-col bg-cover bg-center"
             style={{ backgroundImage: `url(${curElm?.image})` }}
+            initial={{ y: 50, opacity: 0.5 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ ease: "easeOut", duration: 2.5 }}
           >
             <div className="absolute delay-animation right-5 top-5 rounded-full -rotate-45 bg-quaternary text-white p-1 hover:rotate-0 hover:bg-secondary ">
               <MdArrowRightAlt className="text-4xl" />
@@ -70,10 +78,15 @@ export default function Services() {
               <h1 className="text-xl">{curElm?.title}</h1>
               <p>{curElm?.subTitle}</p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </section>
-      <section className="flex justify-center items-center">
+      <motion.section
+        className="flex justify-center items-center"
+        initial={{ y: 50, opacity: 0.5 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ ease: "easeOut", duration: 3 }}
+      >
         <motion.div
           whileHover="hover"
           className="relative w-48 cursor-pointer overflow-hidden p-5 bg-quaternary"
@@ -93,7 +106,7 @@ export default function Services() {
             </button>
           </motion.div>
         </motion.div>
-      </section>
+      </motion.section>
     </aside>
   );
 }
