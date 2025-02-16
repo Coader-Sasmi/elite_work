@@ -5,7 +5,7 @@ import {
   AboutUs,
   ChooseUs,
   News,
-  Process,
+  Project,
   Services,
   WeWork,
 } from "@/components";
@@ -17,9 +17,10 @@ export default function Home() {
       <AboutUs />
       <ChooseUs />
       <Services />
+      <Project />
       <WeWork />
       {/* <ShowCase /> */}
-      <Process />
+      {/* <Process /> */}
       <News />
     </>
   );

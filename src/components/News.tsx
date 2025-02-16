@@ -19,10 +19,6 @@ export default function News() {
       image: "./why_choose_3.jpg",
       title: "Design Industry Updates You Should Know About",
     },
-    // {
-    //   image: "./why_choose_4.jpg",
-    //   title: "Residential Interior Design",
-    // },
   ];
   return (
     <aside className="main-container py-10 flex flex-col gap-10">
