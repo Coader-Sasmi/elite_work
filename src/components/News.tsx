@@ -64,9 +64,9 @@ export default function News() {
           >
             <img src={curElm?.image} alt="image" className="h-96 w-auto" />
             <h1 className="text-xl font-semibold">{curElm?.title}</h1>
-            <div className="flex gap-2 items-end cursor-pointer ">
+            <div className="group flex gap-2 items-end cursor-pointer ">
               <p>Read More</p>
-              <BsArrowRight className="" />
+              <BsArrowRight className="group-hover:translate-x-2 delay-animation" />
             </div>
           </motion.div>
         ))}
