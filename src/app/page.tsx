@@ -7,20 +7,20 @@ import {
   News,
   Project,
   Services,
+  Skills,
   WeWork,
 } from "@/components";
 
 export default function Home() {
   return (
     <>
-      {/* <HeroSec /> */}
       <AboutUs />
       <ChooseUs />
       <Services />
       <Project />
       <WeWork />
-      {/* <ShowCase /> */}
-      {/* <Process /> */}
+      <Skills />
+      {/* <Testimonial /> */}
       <News />
     </>
   );
