@@ -22,7 +22,7 @@ export default function Skills() {
   ];
   return (
     <aside
-      className="main-container py-10 flex lg:flex-row items-center flex-col gap-10 lg:h-screen bg-cover bg-center bg-no-repeat"
+      className="main-container py-10 flex lg:flex-row items-center flex-col lg:gap-56 gap-10 lg:h-screen bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url(./skill_bg.png)` }}
     >
       <section className="w-full flex flex-col gap-10 pt-16 md:pt-0">
@@ -55,39 +55,16 @@ export default function Skills() {
           ))}
         </div>
       </section>
-      <section className="relative w-full">
-        <div className="flex ">
-          <img src="./about_img_1.jpg" alt="image" className="" />
-          <div className="absolute hidden md:flex items-center gap-3 -rotate-90 right-0 top-1/4 ">
-            <motion.div
-              whileHover="hover"
-              className="relative rounded-full overflow-hidden p-6 bg-quaternary "
-            >
-              <motion.div
-                className="absolute inset-0 bg-secondary "
-                initial={{ width: "0%" }}
-                variants={{
-                  hover: {
-                    width: "100%",
-                    transition: { duration: 0.4, ease: "easeInOut" },
-                  },
-                }}
-              >
-                <p className="relative z-10 p-3 text-white font-semibold">
-                  95%
-                </p>
-              </motion.div>
-            </motion.div>
-            <p className="text-xl font-semibold tracking-wide">
-              Positive Feedback
-            </p>
+      <section className="relative w-full ">
+        <div className="flex md:flex-row flex-col gap-8">
+          <img src="./skill_1.jpg" alt="image" className="" />
+          <div className="md:absolute lg:right-10 top-[4rem] ">
+            <img src="./skill_2.jpg" alt="image" className="" />
           </div>
         </div>
-        <img
-          src="./about_img_2.jpg"
-          alt="image"
-          className="absolute right-0 top-2/3 w-56 md:w-auto"
-        />
+        <div className="md:absolute lg:right-10 top-2/3 md:w-auto mt-8">
+          <img src="./skill_3.jpg" alt="image" />
+        </div>
       </section>
     </aside>
   );
