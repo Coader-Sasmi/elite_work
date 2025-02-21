@@ -12,19 +12,53 @@ export default function Footer() {
   const footerArr = [
     {
       heading: "Information",
-      title1: "About Our Company",
-      title2: "View Our Service",
-      title3: "Careers At Company",
-      title4: "Read Our Blog",
-      title5: "Our Latest Project",
+      list: [
+        {
+          title: "About Our Company",
+          path: "/",
+        },
+        {
+          title: "View Our Service",
+          path: "/",
+        },
+        {
+          title: "Term & Conditions",
+          path: "/term",
+        },
+        {
+          title: "Privacy Policy",
+          path: "/privacy",
+        },
+        {
+          title: "Our Latest Project",
+          path: "/",
+        },
+      ],
     },
     {
       heading: "Services",
-      title1: "Residential Interior Design",
-      title2: "Commercial Interior Design",
-      title3: "Furniture And Decor Selection",
-      title4: "Lighting Design",
-      title5: "Color Consultation",
+      list: [
+        {
+          title: "Residential Interior Design",
+          path: "/",
+        },
+        {
+          title: "Commercial Interior Design",
+          path: "/",
+        },
+        {
+          title: "Furniture And Decor Selection",
+          path: "/",
+        },
+        {
+          title: "Lighting Design",
+          path: "/",
+        },
+        {
+          title: "Color Consultation",
+          path: "/",
+        },
+      ],
     },
   ];
   const Gallery_Arr = [
@@ -48,8 +82,8 @@ export default function Footer() {
     },
   ];
   return (
-    <aside className="bg-secondary py-10">
-      <section className="main-container flex flex-col gap-10 text-white">
+    <aside className="bg-secondary py-8">
+      <section className="main-container flex flex-col gap-8 text-white">
         <div className="flex md:justify-between md:flex-row items-center flex-col gap-5">
           <img src="./logo.png" alt="image" className="w-24 h-auto" />
           <div className="flex gap-5 items-center">
@@ -57,22 +91,29 @@ export default function Footer() {
             <div className="bg-white rounded-full p-1 text-quaternary">
               <TiSocialFacebook className="text-2xl" />
             </div>
-            <div className="bg-white rounded-full p-1 text-quaternary">
-              <IoLogoInstagram className="text-2xl" />
-            </div>
+            <Link
+              href="https://www.instagram.com/reel/DClH3DXPk7A/?igsh=ZnA5MXU5d2Zkang3"
+              target="_"
+            >
+              <div className="bg-white rounded-full p-1 text-quaternary">
+                <IoLogoInstagram className="text-2xl" />
+              </div>
+            </Link>
           </div>
         </div>
         <div className="w-full bg-quaternary h-[0.01rem]"></div>
-        <section className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5">
+        <section className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-8 lg:gap-0">
           {footerArr?.map((curElm, i) => (
             <div key={i} className="flex flex-col gap-4">
               <h1 className="text-lg font-semibold">{curElm?.heading}</h1>
               <div className="flex flex-col gap-2">
-                <p>{curElm?.title1}</p>
-                <p>{curElm?.title2}</p>
-                <p>{curElm?.title3}</p>
-                <p>{curElm?.title4}</p>
-                <p>{curElm?.title5}</p>
+                {curElm?.list.map((innerElm, i) => (
+                  <div key={i}>
+                    <Link href={innerElm?.path}>
+                      <p>{innerElm?.title}</p>
+                    </Link>
+                  </div>
+                ))}
               </div>
             </div>
           ))}

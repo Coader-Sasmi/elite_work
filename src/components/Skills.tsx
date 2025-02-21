@@ -58,12 +58,12 @@ export default function Skills() {
       <section className="relative w-full ">
         <div className="flex md:flex-row flex-col gap-8">
           <img src="./skill_1.jpg" alt="image" className="" />
-          <div className="md:absolute lg:right-10 top-[4rem] ">
+          <div className="md:absolute hidden lg:right-10 top-[4rem] ">
             <img src="./skill_2.jpg" alt="image" className="" />
           </div>
         </div>
         <div className="md:absolute lg:right-10 top-2/3 md:w-auto mt-8">
-          <img src="./skill_3.jpg" alt="image" />
+          <img src="./skill_3.jpg" alt="image" className="" />
         </div>
       </section>
     </aside>
