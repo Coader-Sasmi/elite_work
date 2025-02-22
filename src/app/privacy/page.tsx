@@ -45,6 +45,16 @@ export default function page() {
       des: "Enforce our terms and conditions or act to protect the interests of Elite Work, its affiliates, or other individuals.",
     },
   ];
+  const referencefoArr = [
+    {
+      title: "'You,' 'your,' 'yours': ",
+      des: "Refer to the person(s) accessing this website.",
+    },
+    {
+      title: "'We,' 'us,' 'our': ",
+      des: "Refer to Elite Work, its directors, officers, and employees.",
+    },
+  ];
   return (
     <aside className="main-container py-10 flex flex-col gap-6">
       <p>
@@ -141,6 +151,60 @@ export default function page() {
           parties, as Elite Work is not responsible for their practices.
         </p>
       </div>
+      <h1 className="font-semibold text-lg">Privacy Commitments</h1>
+      <p>
+        Elite Work is dedicated to protecting your privacy. We have implemented
+        necessary measures to safeguard your information and will continue to do
+        so. Employees are instructed to discuss business affairs only when
+        critically required, ensuring confidentiality.
+      </p>
+      <h1 className="font-semibold text-lg">Opt-Out</h1>
+      <p>
+        If you wish to discontinue receiving information from us or opt out of
+        marketing communications, you can unsubscribe using the link provided in
+        our emails or SMS, or by writing to us at info@EliteWork.com.
+      </p>
+      <h1 className="font-semibold text-lg">Security</h1>
+      <p>
+        We take security seriously and strive to adopt best practices to protect
+        your information. Users are responsible for maintaining the
+        confidentiality of their credentials and should not share them with
+        others.
+      </p>
+      <h1 className="font-semibold text-lg">Online Payments</h1>
+      <p>
+        For online payments, Elite Work collects personal details such as card
+        numbers and expiration dates. These details are processed securely and
+        are required by law for payment gateways.
+      </p>
+      <h1 className="font-semibold text-lg">Cookies Policy</h1>
+      <p>
+        To personalize your online experience, Elite Work uses cookies. Cookies
+        are text files placed on your hard drive by a web server. They do not
+        run programs or transfer viruses to your computer but help save time and
+        enhance your browsing experience.
+      </p>
+      <h1 className="font-semibold text-lg">Amendments</h1>
+      <p>
+        Elite Work reserves the right to modify this Privacy Policy at any time.
+        Please review this statement periodically for updates.
+      </p>
+      <h1 className="font-semibold text-lg">References</h1>
+      <section className="flex flex-col gap-4">
+        {referencefoArr?.map((curElm, i) => (
+          <div key={i} className="flex gap-2 items-center">
+            <div className="bg-secondary h-2 w-2"></div>
+            <p>
+              <span className="font-semibold">{curElm?.title}</span>{" "}
+              {curElm?.des}
+            </p>
+          </div>
+        ))}
+        <p>
+          For any inquiries regarding this Privacy Policy or to exercise your
+          rights, please contact us at infoEliteWorkk@gmail.com
+        </p>
+      </section>
     </aside>
   );
 }
