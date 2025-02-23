@@ -8,6 +8,7 @@ import {
   Project,
   Services,
   Skills,
+  Testimonial,
   WeWork,
 } from "@/components";
 
@@ -20,7 +21,7 @@ export default function Home() {
       <Project />
       <WeWork />
       <Skills />
-      {/* <Testimonial /> */}
+      <Testimonial />
       <News />
     </>
   );
