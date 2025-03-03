@@ -8,9 +8,9 @@ import { ResponsiveNav } from ".";
 
 export const NavArr = [
   { title: "Home", path: "/" },
-  { title: "About Us", path: "" },
-  { title: "Services", path: "" },
-  { title: "Portfolio", path: "" },
+  { title: "About Us", path: "/#about" },
+  { title: "Services", path: "/#services" },
+  { title: "Portfolio", path: "/#projects" },
   { title: "Price", path: "" },
   { title: "Contact", path: "" },
 ];

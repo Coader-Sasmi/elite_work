@@ -18,6 +18,7 @@ export default function AboutUs() {
       <aside
         className="main-container py-10 flex lg:flex-row items-center flex-col gap-10 lg:h-screen bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(./about_bg.png)` }}
+        id="about"
       >
         <section className="relative w-full">
           <div className="flex ">
@@ -151,7 +152,7 @@ export default function AboutUs() {
               <div className="flex items-center gap-3">
                 <CgProfile className="text-4xl bg-secondary rounded-full text-white" />
                 <div>
-                  <p className="text-lg font-semibold">Raj Kumar Yadav</p>
+                  <p className="text-lg font-semibold">Raj Kumar R</p>
                   <p>Co Founder</p>
                 </div>
               </div>

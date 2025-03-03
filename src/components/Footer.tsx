@@ -2,10 +2,10 @@
 "use client";
 
 import Link from "next/link";
-import { FaPhone } from "react-icons/fa";
+import { AiOutlineYoutube } from "react-icons/ai";
+import { FaPhone, FaWhatsapp } from "react-icons/fa";
 import { IoIosMail, IoLogoInstagram } from "react-icons/io";
 import { IoLocationSharp } from "react-icons/io5";
-import { TiSocialFacebook } from "react-icons/ti";
 import { LightBox } from "./core";
 
 export default function Footer() {
@@ -86,17 +86,27 @@ export default function Footer() {
       <section className="main-container flex flex-col gap-8 text-white">
         <div className="flex md:justify-between md:flex-row items-center flex-col gap-5">
           <img src="./logo.png" alt="image" className="w-24 h-auto" />
-          <div className="flex gap-5 items-center">
+          <div className="flex gap-4 items-center">
             <h1 className="text-lg  font-semibold">Follow Our Socials</h1>
-            <div className="bg-white rounded-full p-1 text-quaternary">
-              <TiSocialFacebook className="text-2xl" />
-            </div>
+            <Link href="https://www.youtube.com/@eliteWorkk" target="_">
+              <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  p-1 text-secondary rounded-xl">
+                <AiOutlineYoutube className="text-2xl" />
+              </div>
+            </Link>
             <Link
               href="https://www.instagram.com/reel/DClH3DXPk7A/?igsh=ZnA5MXU5d2Zkang3"
               target="_"
             >
-              <div className="bg-white rounded-full p-1 text-quaternary">
+              <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  p-1 text-secondary rounded-xl">
                 <IoLogoInstagram className="text-2xl" />
+              </div>
+            </Link>
+            <Link
+              href="https://api.whatsapp.com/send?phone=917406299605"
+              target="_"
+            >
+              <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  p-1 text-secondary rounded-xl">
+                <FaWhatsapp className="text-2xl" />
               </div>
             </Link>
           </div>
@@ -132,8 +142,8 @@ export default function Footer() {
                 <div className="border border-quaternary/30 rounded-full p-2">
                   <IoIosMail />
                 </div>
-                <Link href="mailto:Info@elitework.in">
-                  <p>Info@elitework.in</p>
+                <Link href="mailto:infoeliteworkk.gmail.com">
+                  <p>infoeliteworkk.gmail.com</p>
                 </Link>
               </div>
               <div className="flex items-center gap-3">

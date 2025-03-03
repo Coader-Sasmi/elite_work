@@ -45,7 +45,7 @@ export default function Testimonial() {
           <div className="flex items-center gap-3">
             <CgProfile className="text-7xl bg-secondary rounded-full text-white" />
             <div>
-              <p className="text-lg font-semibold">Raj Kumar Yadav</p>
+              <p className="text-lg font-semibold">Raj Kumar R</p>
               <p>Co Founder</p>
             </div>
           </div>

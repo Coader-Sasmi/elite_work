@@ -1,7 +1,9 @@
 import { Footer, HeroSec, Navbar } from "@/components";
 import type { Metadata } from "next";
 import Head from "next/head";
+import Link from "next/link";
 import { JSX } from "react";
+import { FaWhatsapp } from "react-icons/fa";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import "./globals.css";
@@ -39,6 +41,14 @@ export default function RootLayout({
           <Navbar />
           <HeroSec />
         </div>
+        <Link
+          href="https://api.whatsapp.com/send?phone=917406299605"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fixed bottom-10 right-4 z-50 flex items-center justify-center w-12 h-12 bg-green-500 rounded-full shadow-lg hover:bg-green-600 transition"
+        >
+          <FaWhatsapp className="text-white w-6 h-6" />
+        </Link>
         {children}
         <Footer />
       </body>

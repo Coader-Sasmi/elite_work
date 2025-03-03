@@ -30,7 +30,7 @@ export default function Project() {
   ];
   const [isActive, setIsActive] = useState<any>(0);
   return (
-    <aside className="main-container py-10 flex flex-col gap-10">
+    <aside className="main-container py-10 flex flex-col gap-10" id="projects">
       <section className="w-full flex flex-col gap-10">
         <motion.div
           className="flex gap-3 items-center text-quaternary"

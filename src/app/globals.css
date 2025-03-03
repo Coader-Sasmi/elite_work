@@ -4,24 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  box-sizing: border-box;
-  scrollbar-width: thin;
-  scrollbar-color: #746465 transparent;
-  scroll-behavior: smooth;
-}
-/* //? MUI Styling */
-
-.mui-message-box .MuiInputAdornment-positionStart svg {
-  margin-top: -4.5rem !important;
-}
-
 ::-webkit-scrollbar {
   width: 0.25em;
   height: 0.25em;
 }
 ::-webkit-scrollbar-thumb {
-  background: #5b50a1;
+  background: #f3ae0d;
   border-radius: 10em;
 }
 ::-webkit-scrollbar-track {
