@@ -15,11 +15,11 @@ export default function Footer() {
       list: [
         {
           title: "About Our Company",
-          path: "/",
+          path: "/#about",
         },
         {
           title: "View Our Service",
-          path: "/",
+          path: "/#services",
         },
         {
           title: "Term & Conditions",
@@ -31,7 +31,7 @@ export default function Footer() {
         },
         {
           title: "Our Latest Project",
-          path: "/",
+          path: "/#projects",
         },
       ],
     },
