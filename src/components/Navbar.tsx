@@ -11,7 +11,7 @@ export const NavArr = [
   { title: "About Us", path: "/#about" },
   { title: "Services", path: "/#services" },
   { title: "Portfolio", path: "/#projects" },
-  { title: "Price", path: "" },
+  { title: "Price", path: "/#price" },
   { title: "Contact", path: "" },
 ];
 

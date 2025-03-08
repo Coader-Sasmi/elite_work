@@ -5,6 +5,7 @@ import {
   AboutUs,
   ChooseUs,
   News,
+  PriceSec,
   Project,
   Services,
   Skills,
@@ -19,6 +20,7 @@ export default function Home() {
       <ChooseUs />
       <Services />
       <Project />
+      <PriceSec />
       <WeWork />
       <Skills />
       <Testimonial />

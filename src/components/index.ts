@@ -1,10 +1,12 @@
 export { default as AboutUs } from "./AboutUs";
 export { default as Accordion } from "./Accordion";
+export { default as CardComponent } from "./CardComponent";
 export { default as ChooseUs } from "./ChooseUs";
 export { default as Footer } from "./Footer";
 export { default as HeroSec } from "./HeroSec";
 export { default as Navbar } from "./Navbar";
 export { default as News } from "./News";
+export { default as PriceSec } from "./PriceSec";
 export { default as ProgressBar } from "./ProgressBar";
 export { default as Project } from "./Project";
 export { default as ResponsiveNav } from "./ResponsiveNav";
