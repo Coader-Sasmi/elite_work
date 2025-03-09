@@ -94,7 +94,7 @@ export default function Footer() {
               </div>
             </Link>
             <Link
-              href="https://www.instagram.com/reel/DClH3DXPk7A/?igsh=ZnA5MXU5d2Zkang3"
+              href="https://www.instagram.com/elite_work_/?igsh=NGVidWQ5djQzb2Nh&utm_source=qr#"
               target="_"
             >
               <div className="bg-gradient-to-r from-primary/85 via-primary/50 to-primary p-1 text-secondary rounded-xl">
