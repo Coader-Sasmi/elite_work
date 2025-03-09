@@ -37,11 +37,11 @@ export default function WeWork() {
     },
   ];
   const logoArr = [
-    { image: "./company_logo_1.png" },
-    { image: "./company_logo_2.png" },
-    { image: "./company_logo_3.png" },
-    { image: "./company_logo_4.png" },
-    { image: "./company_logo_5.png" },
+    { image: "./client1.png" },
+    { image: "./client2.png" },
+    { image: "./client3.png" },
+    { image: "./client4.png" },
+    { image: "./client5.png" },
   ];
 
   const settings = {
@@ -121,7 +121,7 @@ export default function WeWork() {
         <Slider {...settings}>
           {logoArr.map((curElm, i) => (
             <div key={i}>
-              <img src={curElm?.image} alt="image" className="w-56 h-auto" />
+              <img src={curElm?.image} alt="image" className="w-20 h-auto" />
             </div>
           ))}
         </Slider>

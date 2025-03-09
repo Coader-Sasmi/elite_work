@@ -89,7 +89,7 @@ export default function Footer() {
           <div className="flex gap-4 items-center">
             <h1 className="text-lg  font-semibold">Follow Our Socials</h1>
             <Link href="https://www.youtube.com/@eliteWorkk" target="_">
-              <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  p-1 text-secondary rounded-xl">
+              <div className="bg-gradient-to-r from-primary/85 via-primary/50 to-primary p-1 text-secondary rounded-xl">
                 <AiOutlineYoutube className="text-2xl" />
               </div>
             </Link>
@@ -97,7 +97,7 @@ export default function Footer() {
               href="https://www.instagram.com/reel/DClH3DXPk7A/?igsh=ZnA5MXU5d2Zkang3"
               target="_"
             >
-              <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  p-1 text-secondary rounded-xl">
+              <div className="bg-gradient-to-r from-primary/85 via-primary/50 to-primary p-1 text-secondary rounded-xl">
                 <IoLogoInstagram className="text-2xl" />
               </div>
             </Link>
@@ -105,7 +105,7 @@ export default function Footer() {
               href="https://api.whatsapp.com/send?phone=917406299605"
               target="_"
             >
-              <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  p-1 text-secondary rounded-xl">
+              <div className="bg-gradient-to-r from-primary/85 via-primary/50 to-primary p-1 text-secondary rounded-xl">
                 <FaWhatsapp className="text-2xl" />
               </div>
             </Link>

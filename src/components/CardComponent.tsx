@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
+import { motion } from "framer-motion";
 import { MdCurrencyRupee } from "react-icons/md";
 
 type PriceItem = {
@@ -30,11 +31,26 @@ export default function CardComponent({ curElm }: { curElm: PriceItem }) {
           <h2 className="text-gray-800 text-3xl font-bold">{curElm?.price}*</h2>
         </div>
       </div>
-
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-36">
-        <button className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-2 rounded-full font-semibold">
-          Read More
-        </button>
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
+        <motion.div
+          whileHover="hover"
+          className="relative w-36 cursor-pointer overflow-hidden p-5 bg-secondary rounded-full"
+        >
+          <motion.div
+            className="absolute inset-0 bg-tertiary whitespace-nowrap"
+            initial={{ width: "0%" }}
+            variants={{
+              hover: {
+                width: "100%",
+                transition: { duration: 0.4, ease: "easeInOut" },
+              },
+            }}
+          >
+            <button className="relative z-10 flex gap-3 items-center font-semibold px-4 text-white py-2 text-sm uppercase">
+              get free quote
+            </button>
+          </motion.div>
+        </motion.div>
       </div>
     </div>
   );
