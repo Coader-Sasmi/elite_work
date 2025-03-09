@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { BsArrowRight } from "react-icons/bs";
 import { LuMoveRight } from "react-icons/lu";
 
@@ -71,9 +72,11 @@ export default function HeroSec() {
                   },
                 }}
               >
-                <button className="relative z-10 flex gap-3 items-center font-semibold px-4 py-2 text-white">
-                  View Projects <BsArrowRight />
-                </button>
+                <Link href="/#projects">
+                  <button className="relative z-10 flex gap-3 items-center font-semibold px-4 py-2 text-white">
+                    View Projects <BsArrowRight />
+                  </button>
+                </Link>
               </motion.div>
             </motion.div>
           </motion.div>

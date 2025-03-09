@@ -1,6 +1,7 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
 
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
@@ -37,7 +38,7 @@ export default function Navbar() {
                 className="rotate-180"
               />
             </div>
-            <div className="main-container lg:flex w-full justify-center items-center gap-8 hidden text-">
+            <div className="lg:flex w-full justify-center items-center gap-8 hidden">
               {NavArr?.map((curElm, i) => (
                 <div key={i}>
                   <Link href={curElm?.path}>
@@ -50,6 +51,25 @@ export default function Navbar() {
                 </div>
               ))}
             </div>
+            <motion.div
+              whileHover="hover"
+              className="relative w-36 cursor-pointer overflow-hidden p-5 bg-tertiary rounded-full"
+            >
+              <motion.div
+                className="absolute inset-0 bg-secondary whitespace-nowrap"
+                initial={{ width: "0%" }}
+                variants={{
+                  hover: {
+                    width: "100%",
+                    transition: { duration: 0.4, ease: "easeInOut" },
+                  },
+                }}
+              >
+                <button className="relative z-10 flex gap-3 items-center font-semibold p-2 text-white text-sm uppercase">
+                  get free quote
+                </button>
+              </motion.div>
+            </motion.div>
           </div>
         </section>
       </nav>

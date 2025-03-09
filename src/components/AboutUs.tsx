@@ -50,7 +50,7 @@ export default function AboutUs() {
           </div>
           <div className="absolute bg-quaternary rounded-full border-[0.4rem] border-white right-1/2 z-10 top-2/3 shadow-md">
             <p className="text-white text-center md:p-7 p-5 font-semibold">
-              <span className="md:text-3xl text-xl">15+</span>
+              <span className="md:text-3xl text-xl">30+</span>
               <br />
               <span>
                 Years Of <br /> Experience
@@ -80,7 +80,8 @@ export default function AboutUs() {
           <p>
             Our dedicated team of designers works closely with you to understand
             your vision and bring it to life with thoughtful attention to
-            detail. Whether it’s transforming a single room or an entire home.
+            detail. Whether {`it’s`} transforming a single room or an entire
+            home.
           </p>
           <motion.div
             className="flex md:flex-row flex-col-reverse gap-5 justify-between w-full"
