@@ -3,12 +3,18 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useState } from "react";
 import { BsArrowRight } from "react-icons/bs";
 import { CgArrowLongRightL, CgProfile } from "react-icons/cg";
 import { FaPhoneAlt } from "react-icons/fa";
 import { TiTick } from "react-icons/ti";
 
 export default function AboutUs() {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const toggleReadMore = () => {
+    setIsExpanded(!isExpanded);
+  };
   return (
     <>
       {/* <Ticker
@@ -81,7 +87,21 @@ export default function AboutUs() {
             Our dedicated team of designers works closely with you to understand
             your vision and bring it to life with thoughtful attention to
             detail. Whether {`it’s`} transforming a single room or an entire
-            home.
+            home. {!isExpanded && <span>...</span>}
+            {isExpanded && (
+              <span>
+                Elite Work is your go-to destination for exceptional home
+                interior design in Bengaluru. Our expert team brings creativity
+                and precision to every project, transforming homes into
+                personalized havens. From modern to timeless, minimalist to
+                luxurious, we cater to all styles, ensuring your space reflects
+                your unique taste. At Elite Work, we handle everything—from the
+                first concept to the final detail—so you can enjoy a seamless
+                and inspiring design journey. Trust us to elevate your home with
+                our innovative solutions and unmatched expertise, setting the
+                standard for interior design in Bengaluru.
+              </span>
+            )}
           </p>
           <motion.div
             className="flex md:flex-row flex-col-reverse gap-5 justify-between w-full"
@@ -116,8 +136,12 @@ export default function AboutUs() {
                     },
                   }}
                 >
-                  <button className="relative z-10 flex gap-3 items-center font-semibold px-4 py-2 text-white">
-                    Read More <BsArrowRight />
+                  <button
+                    onClick={toggleReadMore}
+                    className="relative z-10 flex gap-3 items-center font-semibold px-4 py-2 text-white"
+                  >
+                    {isExpanded ? "Read Less" : "Read More"}
+                    <BsArrowRight />
                   </button>
                 </motion.div>
               </motion.div>
