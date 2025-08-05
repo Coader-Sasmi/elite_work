@@ -56,7 +56,7 @@ export default function AboutUs() {
           </div>
           <div className="absolute bg-quaternary rounded-full border-[0.4rem] border-white right-1/2 z-10 top-2/3 shadow-md">
             <p className="text-white text-center md:p-7 p-5 font-semibold">
-              <span className="md:text-3xl text-xl">30+</span>
+              <span className="md:text-3xl text-xl">36+</span>
               <br />
               <span>
                 Years Of <br /> Experience
