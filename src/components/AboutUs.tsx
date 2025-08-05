@@ -177,8 +177,15 @@ export default function AboutUs() {
               <div className="flex items-center gap-3">
                 <CgProfile className="text-4xl bg-secondary rounded-full text-white" />
                 <div>
+                  <p className="text-lg font-semibold">Ram Kripal Yadav</p>
+                  <p>Founder</p>
+                </div>
+              </div>
+                  <div className="flex items-center gap-3">
+                <CgProfile className="text-4xl bg-secondary rounded-full text-white" />
+                <div>
                   <p className="text-lg font-semibold">Raj Kumar R</p>
-                  <p>Co Founder</p>
+                  <p>Co-Founder & Managing Director</p>
                 </div>
               </div>
             </div>

@@ -142,8 +142,8 @@ export default function Footer() {
                 <div className="border border-quaternary/30 rounded-full p-2">
                   <IoIosMail />
                 </div>
-                <Link href="mailto:infoeliteworkk.gmail.com">
-                  <p>infoeliteworkk.gmail.com</p>
+                <Link href="mailto:infoeliteworkk@gmail.com">
+                  <p>infoeliteworkk@gmail.com</p>
                 </Link>
               </div>
               <div className="flex items-center gap-3">
