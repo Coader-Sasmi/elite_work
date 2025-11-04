@@ -5,12 +5,11 @@ import {
   AboutUs,
   ChooseUs,
   News,
-  PriceSec,
   Project,
   Services,
   Skills,
   Testimonial,
-  WeWork,
+  WeWork
 } from "@/components";
 
 export default function Home() {
@@ -20,7 +19,7 @@ export default function Home() {
       <ChooseUs />
       <Services />
       <Project />
-      <PriceSec />
+      {/* <PriceSec /> */}
       <WeWork />
       <Skills />
       <Testimonial />
