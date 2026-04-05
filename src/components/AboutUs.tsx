@@ -1,197 +1,220 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
-import { BsArrowRight } from "react-icons/bs";
-import { CgArrowLongRightL, CgProfile } from "react-icons/cg";
+import { CgProfile } from "react-icons/cg";
 import { FaPhoneAlt } from "react-icons/fa";
 import { TiTick } from "react-icons/ti";
 
 export default function AboutUs() {
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const toggleReadMore = () => {
-    setIsExpanded(!isExpanded);
-  };
+  const features = [
+    "Creative design expertise",
+    "Client-centered approach",
+    "End-to-end project management",
+    "Premium material sourcing",
+  ];
+
   return (
-    <>
-      {/* <Ticker
-        className="lg:text-5xl text-4xl font-bold text-secondary"
-        end={20}
-      /> */}
-      <aside
-        className="main-container py-10 flex lg:flex-row items-center flex-col gap-10 lg:h-screen bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(./about_bg.png)` }}
-        id="about"
-      >
-        <section className="relative w-full">
-          <div className="flex ">
-            <img src="./about_img_1.jpg" alt="image" className="" />
-            <div className="absolute hidden md:flex items-center gap-3 -rotate-90 right-0 top-1/4 ">
-              <motion.div
-                whileHover="hover"
-                className="relative rounded-full overflow-hidden p-6 bg-quaternary "
-              >
-                <motion.div
-                  className="absolute inset-0 bg-secondary "
-                  initial={{ width: "0%" }}
-                  variants={{
-                    hover: {
-                      width: "100%",
-                      transition: { duration: 0.4, ease: "easeInOut" },
-                    },
-                  }}
-                >
-                  <p className="relative z-10 p-3 text-white font-semibold">
-                    95%
-                  </p>
-                </motion.div>
-              </motion.div>
-              <p className="text-xl font-semibold tracking-wide">
-                Positive Feedback
+    <section
+      id="about"
+      className="bg-[#0a0a0a] py-24 lg:py-32 overflow-hidden"
+    >
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+
+          {/* ── Left: Images ── */}
+          <div className="relative">
+            {/* Main image */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              className="relative"
+            >
+              <img
+                src="./about_img_1.jpg"
+                alt="Interior design"
+                className="w-full h-[520px] object-cover"
+              />
+              {/* Gold border accent */}
+              <div className="absolute -bottom-4 -right-4 w-full h-full border border-[#C9A96E]/20 pointer-events-none" />
+            </motion.div>
+
+            {/* Second image — floating */}
+            <motion.div
+              className="absolute -bottom-12 right-6 lg:-right-12 w-48 lg:w-64"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <img
+                src="./about_img_2.jpg"
+                alt="Interior design detail"
+                className="w-full h-40 lg:h-52 object-cover shadow-2xl"
+              />
+              <div className="absolute inset-0 border border-[#C9A96E]/30 pointer-events-none" />
+            </motion.div>
+
+            {/* Badge */}
+            <motion.div
+              className="absolute -left-6 top-1/3 bg-[#C9A96E] p-6 text-center"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.5 }}
+            >
+              <p className="text-[#0a0a0a] text-3xl font-light leading-none">25+</p>
+              <p className="text-[#0a0a0a]/70 text-xs tracking-[0.15em] uppercase mt-1 font-medium">
+                Years of<br />Excellence
               </p>
-            </div>
+            </motion.div>
           </div>
-          <div className="absolute bg-quaternary rounded-full border-[0.4rem] border-white right-1/2 z-10 top-2/3 shadow-md">
-            <p className="text-white text-center md:p-7 p-5 font-semibold">
-              <span className="md:text-3xl text-xl">36+</span>
+
+          {/* ── Right: Content ── */}
+          <motion.div
+            className="flex flex-col gap-8 pt-12 lg:pt-0"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            {/* Label */}
+            <motion.div
+              className="flex items-center gap-4"
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+            >
+              <div className="w-8 h-px bg-[#C9A96E]" />
+              <span className="text-[#C9A96E] text-xs font-medium tracking-[0.3em] uppercase">
+                Our Story
+              </span>
+            </motion.div>
+
+            {/* Heading */}
+            <motion.h2
+              className="text-4xl lg:text-5xl font-light text-white leading-tight"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+            >
+              Passion for design,
               <br />
-              <span>
-                Years Of <br /> Experience
-              </span>
-            </p>
-          </div>
-          <img
-            src="./about_img_2.jpg"
-            alt="image"
-            className="absolute right-0 top-2/3 w-56 md:w-auto"
-          />
-        </section>
-        <section className="w-full flex flex-col gap-10 pt-16 md:pt-0">
-          <motion.div
-            className="flex gap-3 items-center text-quaternary"
-            initial={{ y: 50, opacity: 0.5 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ ease: "easeOut", duration: 1.5 }}
-          >
-            <CgArrowLongRightL />
-            <h5 className="font-medium">About Us</h5>
-          </motion.div>
-          <h1 className="text-5xl font-semibold">
-            Our passion for design, your
-            <br /> <span className="text-quaternary">vision realized</span>
-          </h1>
-          <p>
-            Our dedicated team of designers works closely with you to understand
-            your vision and bring it to life with thoughtful attention to
-            detail. Whether {`it’s`} transforming a single room or an entire
-            home. {!isExpanded && <span>...</span>}
-            {isExpanded && (
-              <span>
-                Elite Work is your go-to destination for exceptional home
-                interior design in Bengaluru. Our expert team brings creativity
-                and precision to every project, transforming homes into
-                personalized havens. From modern to timeless, minimalist to
-                luxurious, we cater to all styles, ensuring your space reflects
-                your unique taste. At Elite Work, we handle everything—from the
-                first concept to the final detail—so you can enjoy a seamless
-                and inspiring design journey. Trust us to elevate your home with
-                our innovative solutions and unmatched expertise, setting the
-                standard for interior design in Bengaluru.
-              </span>
-            )}
-          </p>
-          <motion.div
-            className="flex md:flex-row flex-col-reverse gap-5 justify-between w-full"
-            initial={{ y: 50, opacity: 0.5 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ ease: "easeOut", duration: 1.5, delay: 0.5 }}
-          >
-            <div className="flex flex-col gap-4 ">
-              <div className="flex items-center gap-3">
-                <div className="bg-quaternary rounded-full p-1 text-white">
-                  <TiTick className="text-lg" />
+              <span className="italic text-[#C9A96E]">your vision realized.</span>
+            </motion.h2>
+
+            {/* Body text */}
+            <motion.div
+              className="text-white/50 text-base leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <p>
+                Our dedicated team of designers works closely with you to understand
+                your vision and bring it to life with thoughtful attention to detail.
+                Whether it&apos;s transforming a single room or an entire home.{" "}
+                <AnimatePresence initial={false}>
+                  {isExpanded && (
+                    <motion.span
+                      key="expanded"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.4 }}
+                    >
+                      Elite Work is your go-to destination for exceptional home
+                      interior design in Bengaluru. Our expert team brings creativity
+                      and precision to every project, transforming homes into
+                      personalized havens. From modern to timeless, minimalist to
+                      luxurious — we cater to all styles, ensuring your space reflects
+                      your unique taste. We handle everything from the first concept
+                      to the final detail, so you can enjoy a seamless and inspiring
+                      design journey.
+                    </motion.span>
+                  )}
+                </AnimatePresence>
+                {!isExpanded && <span>...</span>}
+              </p>
+            </motion.div>
+
+            {/* Features */}
+            <motion.div
+              className="grid grid-cols-2 gap-3"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              {features.map((item, i) => (
+                <div key={i} className="flex items-center gap-3">
+                  <div className="w-5 h-5 border border-[#C9A96E]/40 rounded-full flex items-center justify-center flex-shrink-0">
+                    <TiTick className="text-[#C9A96E] text-xs" />
+                  </div>
+                  <span className="text-white/60 text-sm">{item}</span>
                 </div>
-                <p>creative expertise</p>
-              </div>
-              <div className="flex items-center gap-3 md:pb-8 pb-5">
-                <div className="bg-quaternary rounded-full p-1 text-white">
-                  <TiTick className="text-lg" />
-                </div>
-                <p>client-centered approach</p>
-              </div>
-              <motion.div
-                whileHover="hover"
-                className="relative w-40 cursor-pointer overflow-hidden p-5 bg-quaternary"
+              ))}
+            </motion.div>
+
+            {/* Read more + CTA */}
+            <motion.div
+              className="flex items-center gap-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <button
+                onClick={() => setIsExpanded(!isExpanded)}
+                className="text-[#C9A96E] text-sm font-medium tracking-[0.1em] uppercase border-b border-[#C9A96E]/30 pb-0.5 hover:border-[#C9A96E] transition-colors duration-300"
               >
-                <motion.div
-                  className="absolute inset-0 bg-secondary whitespace-nowrap"
-                  initial={{ width: "0%" }}
-                  variants={{
-                    hover: {
-                      width: "100%",
-                      transition: { duration: 0.4, ease: "easeInOut" },
-                    },
-                  }}
-                >
-                  <button
-                    onClick={toggleReadMore}
-                    className="relative z-10 flex gap-3 items-center font-semibold px-4 py-2 text-white"
-                  >
-                    {isExpanded ? "Read Less" : "Read More"}
-                    <BsArrowRight />
-                  </button>
-                </motion.div>
-              </motion.div>
-            </div>
-            <div className="flex flex-col gap-8">
-              <div className="flex items-center gap-3">
-                <motion.div
-                  whileHover="hover"
-                  className="relative rounded-full overflow-hidden p-5 bg-quaternary "
-                >
-                  <motion.div
-                    className="absolute inset-0 bg-secondary "
-                    initial={{ width: "0%" }}
-                    variants={{
-                      hover: {
-                        width: "100%",
-                        transition: { duration: 0.4, ease: "easeInOut" },
-                      },
-                    }}
-                  >
-                    <p className="relative z-10 p-2 ">
-                      <FaPhoneAlt className="text-white text-xl" />
-                    </p>
-                  </motion.div>
-                </motion.div>
-                <div>
-                  <p>Need Any Help?</p>
-                  <Link href="tel:+917406299605">
-                    <p className="text-lg font-semibold">+(91) 7406299605</p>
-                  </Link>
+                {isExpanded ? "Show Less" : "Our Story"}
+              </button>
+              <Link href="tel:+917406299605">
+                <div className="flex items-center gap-3 group">
+                  <div className="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center group-hover:border-[#C9A96E]/40 transition-colors duration-300">
+                    <FaPhoneAlt className="text-white/40 text-xs group-hover:text-[#C9A96E] transition-colors duration-300" />
+                  </div>
+                  <div>
+                    <p className="text-white/30 text-xs tracking-wider uppercase">Call Us</p>
+                    <p className="text-white text-sm font-medium">+(91) 7406299605</p>
+                  </div>
                 </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <CgProfile className="text-4xl bg-secondary rounded-full text-white" />
-                <div>
-                  <p className="text-lg font-semibold">Ram Kripal Yadav</p>
-                  <p>Founder</p>
+              </Link>
+            </motion.div>
+
+            {/* Founders */}
+            <motion.div
+              className="pt-4 border-t border-white/5 flex flex-col gap-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+            >
+              {[
+                { name: "Ram Kripal Yadav", role: "Founder" },
+                { name: "Raj Kumar R", role: "Co-Founder & Managing Director" },
+              ].map((person, i) => (
+                <div key={i} className="flex items-center gap-3">
+                  <CgProfile className="text-3xl text-[#C9A96E]/60" />
+                  <div>
+                    <p className="text-white text-sm font-medium">{person.name}</p>
+                    <p className="text-white/30 text-xs">{person.role}</p>
+                  </div>
                 </div>
-              </div>
-                  <div className="flex items-center gap-3">
-                <CgProfile className="text-4xl bg-secondary rounded-full text-white" />
-                <div>
-                  <p className="text-lg font-semibold">Raj Kumar R</p>
-                  <p>Co-Founder & Managing Director</p>
-                </div>
-              </div>
-            </div>
+              ))}
+            </motion.div>
           </motion.div>
-        </section>
-      </aside>
-    </>
+        </div>
+      </div>
+    </section>
   );
 }

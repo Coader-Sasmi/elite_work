@@ -11,6 +11,7 @@ import {
   Testimonial,
   WeWork
 } from "@/components";
+import ContactUs from "@/components/ContactUs";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       <WeWork />
       <Skills />
       <Testimonial />
+      <ContactUs />
       <News />
     </>
   );

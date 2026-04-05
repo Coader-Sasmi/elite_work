@@ -35,10 +35,8 @@ export default function Drawer({
       }
     };
 
-    (() => {
-      document.addEventListener("mousedown", handleClickOutside);
-      document.addEventListener("keydown", handleKeyDown);
-    })();
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleKeyDown);
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
@@ -64,20 +62,18 @@ export default function Drawer({
     right: "right-0",
     top: "top-0",
   };
+
   return (
     <div
-      className={`${
-        open
+      className={`${open
           ? `opacity-100 ${initialTranslate[anchor]} bg-[#00000080]`
           : `${endTranslate[anchor]} opacity-50`
-      } fixed inset-0 min-h-screen w-full delay-animation z-[999]`}
+        } fixed inset-0 min-h-screen w-full delay-animation z-[999]`}
     >
-      <div className={`relative w-full h-full`}>
+      <div className="relative w-full h-full">
         <div
           ref={mainDivRef}
-          style={{
-            backgroundColor: "#ffffff",
-          }}
+          // ✅ Removed hardcoded backgroundColor: "#ffffff" — was overriding drawerStyle bg
           className={`delay-animation overflow-scroll scroll-bar-none ${drawerStyle} absolute shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] ${initialPositionChart[anchor]}`}
         >
           {children}

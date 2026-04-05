@@ -1,6 +1,6 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { AiOutlineYoutube } from "react-icons/ai";
 import { FaPhone, FaWhatsapp } from "react-icons/fa";
@@ -9,164 +9,189 @@ import { IoLocationSharp } from "react-icons/io5";
 import { LightBox } from "./core";
 
 export default function Footer() {
-  const footerArr = [
+  const navLinks = [
+    { title: "About Us", path: "/#about" },
+    { title: "Services", path: "/#services" },
+    { title: "Portfolio", path: "/#projects" },
+    // { title: "Pricing", path: "/#price" },
+    { title: "Terms & Conditions", path: "/term" },
+    { title: "Privacy Policy", path: "/privacy" },
+  ];
+
+  const galleryImages = [
+    "why_choose_1.jpg",
+    "why_choose_2.jpg",
+    "why_choose_3.jpg",
+    "why_choose_4.jpg",
+    "service_1.jpg",
+    "service_2.jpg",
+  ];
+
+  const socials = [
     {
-      heading: "Information",
-      list: [
-        {
-          title: "About Our Company",
-          path: "/#about",
-        },
-        {
-          title: "View Our Service",
-          path: "/#services",
-        },
-        {
-          title: "Term & Conditions",
-          path: "/term",
-        },
-        {
-          title: "Privacy Policy",
-          path: "/privacy",
-        },
-        {
-          title: "Our Latest Project",
-          path: "/#projects",
-        },
-      ],
+      href: "https://www.youtube.com/@eliteWorkk",
+      icon: <AiOutlineYoutube className="text-base" />,
+      label: "YouTube",
     },
     {
-      heading: "Services",
-      list: [
-        {
-          title: "Residential Interior Design",
-          path: "/",
-        },
-        {
-          title: "Commercial Interior Design",
-          path: "/",
-        },
-        {
-          title: "Furniture And Decor Selection",
-          path: "/",
-        },
-        {
-          title: "Lighting Design",
-          path: "/",
-        },
-        {
-          title: "Color Consultation",
-          path: "/",
-        },
-      ],
+      href: "https://www.instagram.com/elite_work_/?igsh=NGVidWQ5djQzb2Nh&utm_source=qr#",
+      icon: <IoLogoInstagram className="text-base" />,
+      label: "Instagram",
+    },
+    {
+      href: "https://api.whatsapp.com/send?phone=917406299605",
+      icon: <FaWhatsapp className="text-base" />,
+      label: "WhatsApp",
     },
   ];
-  const Gallery_Arr = [
-    {
-      image: "why_choose_1.jpg",
-    },
-    {
-      image: "why_choose_2.jpg",
-    },
-    {
-      image: "why_choose_3.jpg",
-    },
-    {
-      image: "why_choose_4.jpg",
-    },
-    {
-      image: "service_1.jpg",
-    },
-    {
-      image: "service_2.jpg",
-    },
-  ];
+
   return (
-    <aside className="bg-secondary py-8">
-      <section className="main-container flex flex-col gap-8 text-white">
-        <div className="flex md:justify-between md:flex-row items-center flex-col gap-5">
-          <img src="./logo.png" alt="image" className="w-24 h-auto" />
-          <div className="flex gap-4 items-center">
-            <h1 className="text-lg  font-semibold">Follow Our Socials</h1>
-            <Link href="https://www.youtube.com/@eliteWorkk" target="_">
-              <div className="bg-gradient-to-r from-primary/85 via-primary/50 to-primary p-1 text-secondary rounded-xl">
-                <AiOutlineYoutube className="text-2xl" />
-              </div>
-            </Link>
-            <Link
-              href="https://www.instagram.com/elite_work_/?igsh=NGVidWQ5djQzb2Nh&utm_source=qr#"
-              target="_"
-            >
-              <div className="bg-gradient-to-r from-primary/85 via-primary/50 to-primary p-1 text-secondary rounded-xl">
-                <IoLogoInstagram className="text-2xl" />
-              </div>
-            </Link>
-            <Link
-              href="https://api.whatsapp.com/send?phone=917406299605"
-              target="_"
-            >
-              <div className="bg-gradient-to-r from-primary/85 via-primary/50 to-primary p-1 text-secondary rounded-xl">
-                <FaWhatsapp className="text-2xl" />
-              </div>
-            </Link>
+    <footer className="bg-[#060606] border-t border-white/5">
+
+      {/* CTA Banner */}
+      <div className="border-b border-white/5">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+            <div>
+              <h3 className="text-3xl lg:text-4xl font-light text-white mb-3">
+                Ready to transform your space?
+              </h3>
+              <p className="text-white/30 text-sm">
+                Book a free consultation and let&apos;s begin your story.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-4">
+              <Link href="tel:+917406299605">
+                <motion.button
+                  whileHover={{ scale: 1.03, backgroundColor: "#D4B87A" }}
+                  whileTap={{ scale: 0.97 }}
+                  className="px-8 py-4 bg-[#C9A96E] text-[#0a0a0a] text-sm font-semibold tracking-[0.12em] uppercase transition-colors duration-300"
+                >
+                  Call Us Now
+                </motion.button>
+              </Link>
+              <Link href="mailto:infoeliteworkk@gmail.com">
+                <motion.button
+                  whileHover={{ scale: 1.03, borderColor: "#C9A96E", color: "#C9A96E" }}
+                  whileTap={{ scale: 0.97 }}
+                  className="px-8 py-4 border border-white/10 text-white/60 text-sm font-medium tracking-[0.12em] uppercase transition-colors duration-300"
+                >
+                  Email Us
+                </motion.button>
+              </Link>
+            </div>
           </div>
         </div>
-        <div className="w-full bg-quaternary h-[0.01rem]"></div>
-        <section className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-8 lg:gap-0">
-          {footerArr?.map((curElm, i) => (
-            <div key={i} className="flex flex-col gap-4">
-              <h1 className="text-lg font-semibold">{curElm?.heading}</h1>
-              <div className="flex flex-col gap-2">
-                {curElm?.list.map((innerElm, i) => (
-                  <div key={i}>
-                    <Link href={innerElm?.path}>
-                      <p>{innerElm?.title}</p>
+      </div>
+
+      {/* Main footer content */}
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-12">
+
+          {/* Brand column */}
+          <div className="flex flex-col gap-6 lg:col-span-1">
+            <Link href="/">
+              <img src="./logo.png" alt="Elite Work" className="h-10 w-auto" />
+            </Link>
+            <p className="text-white/30 text-sm leading-relaxed">
+              Bengaluru&apos;s premier interior design studio, crafting extraordinary spaces since 1988.
+            </p>
+            {/* Socials */}
+            <div className="flex gap-3">
+              {socials.map((s, i) => (
+                <Link key={i} href={s.href} target="_blank" aria-label={s.label}>
+                  <motion.div
+                    whileHover={{ y: -2, borderColor: "#C9A96E", color: "#C9A96E" }}
+                    className="w-9 h-9 border border-white/10 rounded-full flex items-center justify-center text-white/40 transition-colors duration-300"
+                  >
+                    {s.icon}
+                  </motion.div>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Navigation */}
+          <div className="flex flex-col gap-6">
+            <h4 className="text-white/20 text-xs tracking-[0.25em] uppercase font-medium">
+              Navigation
+            </h4>
+            <div className="flex flex-col gap-3">
+              {navLinks.map((link, i) => (
+                <Link key={i} href={link.path}>
+                  <span className="text-white/40 hover:text-[#C9A96E] text-sm transition-colors duration-300">
+                    {link.title}
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Contact */}
+          <div className="flex flex-col gap-6">
+            <h4 className="text-white/20 text-xs tracking-[0.25em] uppercase font-medium">
+              Contact
+            </h4>
+            <div className="flex flex-col gap-5">
+              {[
+                {
+                  icon: <FaPhone className="text-xs rotate-90" />,
+                  content: (
+                    <Link href="tel:+917406299605">
+                      <p className="text-white/40 hover:text-[#C9A96E] text-sm transition-colors duration-300">
+                        +(91) 7406299605
+                      </p>
                     </Link>
+                  ),
+                },
+                {
+                  icon: <IoIosMail className="text-sm" />,
+                  content: (
+                    <Link href="mailto:infoeliteworkk@gmail.com">
+                      <p className="text-white/40 hover:text-[#C9A96E] text-sm transition-colors duration-300">
+                        infoeliteworkk@gmail.com
+                      </p>
+                    </Link>
+                  ),
+                },
+                {
+                  icon: <IoLocationSharp className="text-sm" />,
+                  content: (
+                    <p className="text-white/40 text-sm leading-relaxed">
+                      Elitework, Bannerghatta Road,<br />Karnataka 560083
+                    </p>
+                  ),
+                },
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-3 group">
+                  <div className="w-7 h-7 border border-white/10 rounded-full flex items-center justify-center text-white/20 flex-shrink-0 mt-0.5 group-hover:border-[#C9A96E]/30 transition-colors duration-300">
+                    {item.icon}
                   </div>
-                ))}
-              </div>
-            </div>
-          ))}
-          <div className="flex flex-col gap-4">
-            <h1 className="text-lg font-semibold">Contact Us</h1>
-            <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-3">
-                <div className="border border-quaternary/30 rounded-full p-2">
-                  <FaPhone className="rotate-90" />
+                  {item.content}
                 </div>
-                <Link href="tel:+917406299605">
-                  <p>+(91) 7406299605</p>
-                </Link>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="border border-quaternary/30 rounded-full p-2">
-                  <IoIosMail />
-                </div>
-                <Link href="mailto:infoeliteworkk@gmail.com">
-                  <p>infoeliteworkk@gmail.com</p>
-                </Link>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="border border-quaternary/30 rounded-full p-2">
-                  <IoLocationSharp />
-                </div>
-                <p>Elitework, Bannerghatta Road, Karnataka 560083 </p>
-              </div>
+              ))}
             </div>
           </div>
-          <div className="flex flex-col w-full">
-            <h4 className=" text-lg font-semibold">Gallery</h4>
-            <LightBox images={Gallery_Arr.map((curElm) => curElm?.image)} />
+
+          {/* Gallery */}
+          <div className="flex flex-col gap-6">
+            <h4 className="text-white/20 text-xs tracking-[0.25em] uppercase font-medium">
+              Gallery
+            </h4>
+            <LightBox images={galleryImages} />
           </div>
-        </section>
-        <div className="w-full bg-quaternary h-[0.01rem]"></div>
-        <div className="flex justify-center items-center">
-          <p className="font-semibold md:tracking-wider text-center">
-            &copy; Copyright Elite Work {new Date().getFullYear()} . All right
-            reserved.
+        </div>
+
+        {/* Bottom bar */}
+        <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-white/20 text-xs tracking-wider">
+            &copy; {new Date().getFullYear()} Elite Work. All rights reserved.
+          </p>
+          <p className="text-white/10 text-xs">
+            Crafting extraordinary interiors in Bengaluru.
           </p>
         </div>
-      </section>
-    </aside>
+      </div>
+    </footer>
   );
 }

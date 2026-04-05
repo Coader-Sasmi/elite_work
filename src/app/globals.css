@@ -4,12 +4,16 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background-color: #111111;
+}
+
 ::-webkit-scrollbar {
   width: 0.25em;
   height: 0.25em;
 }
 ::-webkit-scrollbar-thumb {
-  background: #f3ae0d;
+  background: #c9a96e;
   border-radius: 10em;
 }
 ::-webkit-scrollbar-track {
@@ -28,8 +32,7 @@
   }
 }
 
-/* Footer section Animation */
-
+/* Hero zoom background animation */
 .zoom {
   animation: scale 25s linear infinite;
 }
@@ -44,14 +47,10 @@
   }
 }
 
-/* Light box css  */
-
+/* Light box css */
 .galaxy_card:hover .Eye_icon {
   visibility: visible;
   transform: translateY(0) !important;
-}
-.indivisual_gallery_div_img:odd {
-  animation: drop 500ms ease-in-out forwards;
 }
 .Eye_icon {
   transition: all ease-in-out 0.3s !important;

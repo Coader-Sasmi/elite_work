@@ -1,7 +1,7 @@
 export { default as AboutUs } from "./AboutUs";
 export { default as Accordion } from "./Accordion";
-export { default as CardComponent } from "./CardComponent";
 export { default as ChooseUs } from "./ChooseUs";
+export { default as ContactUs } from "./ContactUs";
 export { default as Footer } from "./Footer";
 export { default as HeroSec } from "./HeroSec";
 export { default as Navbar } from "./Navbar";
@@ -9,8 +9,8 @@ export { default as News } from "./News";
 export { default as PriceSec } from "./PriceSec";
 export { default as ProgressBar } from "./ProgressBar";
 export { default as Project } from "./Project";
-export { default as ResponsiveNav } from "./ResponsiveNav";
 export { default as Services } from "./Services";
 export { default as Skills } from "./Skills";
 export { default as Testimonial } from "./Testimonial";
 export { default as WeWork } from "./WeWork";
+

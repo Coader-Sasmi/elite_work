@@ -1,112 +1,166 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { motion } from "framer-motion";
-import { BsArrowRight } from "react-icons/bs";
-import { CgArrowLongRightL } from "react-icons/cg";
+import { useState } from "react";
 import { MdArrowRightAlt } from "react-icons/md";
 
 export default function Services() {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
   const serviceArr = [
     {
       image: "./service_1.jpg",
+      number: "01",
       title: "Residential Interior Design",
-      subTitle:
-        "We create personalized living spaces that reflect your style and functional needs.",
+      subTitle: "Personalized living spaces crafted around your lifestyle, taste, and functional needs.",
+      tag: "Homes & Apartments",
     },
     {
       image: "./service_2.jpg",
+      number: "02",
       title: "Commercial Interior Design",
-      subTitle:
-        "Enhancing business environments with professional, functional, and aesthetically.",
+      subTitle: "Elevating business environments with professional spaces that inspire productivity.",
+      tag: "Offices & Retail",
     },
     {
       image: "./service_3.jpg",
-      title: "Furniture And Decor Selection",
-      subTitle:
-        "Our experts help you choose the perfect furniture and decor complement your style.",
+      number: "03",
+      title: "Furniture & Decor Curation",
+      subTitle: "Handpicked furniture and decor selections that complement your unique aesthetic.",
+      tag: "Styling & Selection",
     },
     {
       image: "./service_1.jpg",
-      title: "Residential Interior Design",
-      subTitle:
-        "We create personalized living spaces that reflect your style and functional needs.",
+      number: "04",
+      title: "Renovation & Turnkey Projects",
+      subTitle: "Complete transformation from concept to completion — we handle every detail.",
+      tag: "Full Renovations",
     },
   ];
+
   return (
-    <aside className="main-container py-10 flex flex-col gap-10" id="services">
-      <section className="w-full flex flex-col gap-10">
-        <motion.div
-          className="flex gap-3 items-center text-quaternary"
-          initial={{ y: 50, opacity: 0.5 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ ease: "easeOut", duration: 1.5 }}
-        >
-          <CgArrowLongRightL />
-          <h5 className="font-medium">Our Services</h5>
-        </motion.div>
-        <div className="flex lg:flex-row flex-col gap-8">
-          <h1 className="text-5xl font-semibold w-full">
-            Innovative design services for
-            <br /> <span className="text-quaternary">every need</span>
-          </h1>
+    <section
+      id="services"
+      className="bg-[#0d0d0d] py-24 lg:py-32"
+    >
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+
+        {/* Header */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
+          <div className="flex flex-col gap-6 max-w-xl">
+            <div className="flex items-center gap-4">
+              <div className="w-8 h-px bg-[#C9A96E]" />
+              <span className="text-[#C9A96E] text-xs font-medium tracking-[0.3em] uppercase">
+                What We Do
+              </span>
+            </div>
+            <motion.h2
+              className="text-4xl lg:text-5xl font-light text-white leading-tight"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              Design services for
+              <br />
+              <span className="italic text-[#C9A96E]">every vision.</span>
+            </motion.h2>
+          </div>
           <motion.p
-            className="w-full"
-            initial={{ y: 50, opacity: 0.5 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ ease: "easeOut", duration: 2 }}
+            className="text-white/40 text-base leading-relaxed max-w-sm"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            We offer a range of bespoke interior design services tailored to
-            your unique needs. From concept development to final installation.
+            From bespoke concept development to flawless final installation —
+            every project is a new story waiting to be told.
           </motion.p>
         </div>
-      </section>
-      <section className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6">
-        {serviceArr?.map((curElm, i) => (
-          <motion.div
-            key={i}
-            className="relative flex w-auto h-[30rem] flex-col bg-cover bg-center"
-            style={{ backgroundImage: `url(${curElm?.image})` }}
-            initial={{ y: 50, opacity: 0.5 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ ease: "easeOut", duration: 2.5 }}
-          >
-            <div className="absolute delay-animation right-5 top-5 rounded-full -rotate-45 bg-quaternary text-white p-1 hover:rotate-0 hover:bg-secondary ">
-              <MdArrowRightAlt className="text-4xl" />
-            </div>
-            <div className="flex flex-col gap-3 justify-end items-start font-semibold h-full w-full text-white bg-black/40 bg-blend-overlay p-8">
-              <h1 className="text-xl">{curElm?.title}</h1>
-              <p>{curElm?.subTitle}</p>
-            </div>
-          </motion.div>
-        ))}
-      </section>
-      <motion.section
-        className="flex justify-center items-center"
-        initial={{ y: 50, opacity: 0.5 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        transition={{ ease: "easeOut", duration: 3 }}
-      >
+
+        {/* Services Grid */}
+        <div className="grid md:grid-cols-2 gap-px bg-white/5">
+          {serviceArr.map((item, i) => (
+            <motion.div
+              key={i}
+              className="relative overflow-hidden group cursor-pointer bg-[#0d0d0d]"
+              style={{ height: "420px" }}
+              onHoverStart={() => setHoveredIndex(i)}
+              onHoverEnd={() => setHoveredIndex(null)}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: i * 0.1 }}
+            >
+              {/* Background image */}
+              <motion.div
+                className="absolute inset-0 bg-cover bg-center"
+                style={{ backgroundImage: `url(${item.image})` }}
+                animate={{ scale: hoveredIndex === i ? 1.06 : 1 }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              />
+
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/60 to-[#0a0a0a]/10" />
+              <motion.div
+                className="absolute inset-0 bg-[#C9A96E]/10"
+                animate={{ opacity: hoveredIndex === i ? 1 : 0 }}
+                transition={{ duration: 0.5 }}
+              />
+
+              {/* Content */}
+              <div className="absolute inset-0 p-8 flex flex-col justify-between">
+                <div className="flex items-start justify-between">
+                  <span className="text-[#C9A96E]/50 text-xs tracking-[0.2em] font-medium uppercase">
+                    {item.tag}
+                  </span>
+                  <motion.div
+                    className="w-10 h-10 border border-white/20 rounded-full flex items-center justify-center"
+                    animate={{
+                      rotate: hoveredIndex === i ? 45 : -45,
+                      borderColor: hoveredIndex === i ? "#C9A96E" : "rgba(255,255,255,0.2)",
+                    }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    <MdArrowRightAlt className="text-white text-lg" />
+                  </motion.div>
+                </div>
+
+                <div className="flex flex-col gap-3">
+                  <span className="text-white/20 text-6xl font-light leading-none">
+                    {item.number}
+                  </span>
+                  <h3 className="text-white text-xl font-light">{item.title}</h3>
+                  <motion.p
+                    className="text-white/50 text-sm leading-relaxed max-w-xs"
+                    animate={{ opacity: hoveredIndex === i ? 1 : 0.6 }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    {item.subTitle}
+                  </motion.p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Bottom CTA */}
         <motion.div
-          whileHover="hover"
-          className="relative w-48 cursor-pointer overflow-hidden p-5 bg-quaternary"
+          className="flex justify-center mt-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
         >
-          <motion.div
-            className="absolute inset-0 bg-secondary whitespace-nowrap"
-            initial={{ width: "0%" }}
-            variants={{
-              hover: {
-                width: "100%",
-                transition: { duration: 0.4, ease: "easeInOut" },
-              },
-            }}
+          <motion.button
+            whileHover={{ scale: 1.03, backgroundColor: "#D4B87A" }}
+            whileTap={{ scale: 0.97 }}
+            className="px-10 py-4 bg-[#C9A96E] text-[#0a0a0a] text-sm font-semibold tracking-[0.15em] uppercase transition-colors duration-300"
           >
-            <button className="relative z-10 flex gap-3 items-center font-semibold px-6 text-white py-2">
-              See All Services <BsArrowRight />
-            </button>
-          </motion.div>
+            View All Services
+          </motion.button>
         </motion.div>
-      </motion.section>
-    </aside>
+      </div>
+    </section>
   );
 }
