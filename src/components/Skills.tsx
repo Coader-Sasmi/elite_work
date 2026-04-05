@@ -1,21 +1,22 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import ProgressBar from "./ProgressBar";
 
-export default function Skills() {
-  const skills = [
-    { title: "Space Planning & Layout Design", number: 95 },
-    { title: "Material & Finish Selection", number: 90 },
-    { title: "Project Management & Delivery", number: 92 },
-    { title: "Sustainable & Eco-Friendly Design", number: 75 },
-    { title: "3D Visualization & Rendering", number: 85 },
-  ];
+const skills = [
+  { title: "Space Planning & Layout Design", number: 95 },
+  { title: "Material & Finish Selection", number: 90 },
+  { title: "Project Management & Delivery", number: 92 },
+  { title: "Sustainable & Eco-Friendly Design", number: 75 },
+  { title: "3D Visualization & Rendering", number: 85 },
+];
 
+export default function Skills() {
   return (
     <section
       className="bg-[#0a0a0a] py-24 lg:py-32 overflow-hidden"
-      style={{ backgroundImage: "url('./skill_bg.png')", backgroundSize: "cover", backgroundPosition: "center" }}
+      style={{ backgroundImage: "url('/skill_bg.png')", backgroundSize: "cover", backgroundPosition: "center" }}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-32 items-center">
@@ -84,41 +85,52 @@ export default function Skills() {
             transition={{ duration: 0.8 }}
           >
             <div className="grid grid-cols-2 gap-4">
+
+              {/* Large top image */}
               <motion.div
-                className="col-span-2"
+                className="col-span-2 relative w-full h-64"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.1 }}
               >
-                <img
-                  src="./skills1.jpg"
+                <Image
+                  src="/skills1.jpg"
                   alt="Interior design skill"
-                  className="w-full h-64 object-cover"
+                  fill
+                  className="object-cover"
                 />
               </motion.div>
+
+              {/* Bottom left */}
               <motion.div
+                className="relative w-full h-52"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                <img
-                  src="./skills2.jpg"
+                <Image
+                  src="/skills2.jpg"
                   alt="Interior design detail"
-                  className="w-full h-52 object-cover"
+                  fill
+                  className="object-cover"
                 />
               </motion.div>
+
+              {/* Bottom right */}
               <motion.div
+                className="relative w-full h-52"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
-                <img
-                  src="./skills3.jpg"
+                <Image
+                  src="/skills3.jpg"
                   alt="Interior design finish"
-                  className="w-full h-52 object-cover"
+                  fill
+                  className="object-cover"
                 />
               </motion.div>
             </div>

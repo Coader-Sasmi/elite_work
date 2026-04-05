@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { BsDoorOpen } from "react-icons/bs";
 import { GoStopwatch } from "react-icons/go";
 import { HiOutlineLightBulb } from "react-icons/hi";
@@ -39,11 +40,11 @@ const steps = [
 ];
 
 const logos = [
-  { image: "./client1.png" },
-  { image: "./client2.png" },
-  { image: "./client3.png" },
-  { image: "./client4.png" },
-  { image: "./client5.png" },
+  { image: "/client1.png" },
+  { image: "/client2.png" },
+  { image: "/client3.png" },
+  { image: "/client4.png" },
+  { image: "/client5.png" },
 ];
 
 const sliderSettings = {
@@ -113,7 +114,6 @@ export default function WeWork() {
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: i * 0.1 }}
             >
-              {/* Step number + icon */}
               <div className="flex items-center justify-between">
                 <span className="text-[#C9A96E]/30 text-xs tracking-[0.2em] font-medium uppercase">
                   {step.step}
@@ -124,10 +124,7 @@ export default function WeWork() {
                   </span>
                 </div>
               </div>
-
-              {/* Gold accent line */}
               <div className="w-8 h-px bg-[#C9A96E]/30 group-hover:w-16 group-hover:bg-[#C9A96E] transition-all duration-500" />
-
               <div className="flex flex-col gap-3">
                 <h3 className="text-white text-lg font-light">{step.title}</h3>
                 <p className="text-white/40 text-sm leading-relaxed">{step.subTitle}</p>
@@ -150,9 +147,12 @@ export default function WeWork() {
                 <div key={i} className="px-4 sm:px-6">
                   {/* Fixed-height container equalizes all logos */}
                   <div className="h-16 flex items-center justify-center">
-                    <img
+                    {/* ✅ width+height props used instead of fill — works correctly inside react-slick */}
+                    <Image
                       src={logo.image}
                       alt="Client logo"
+                      width={120}
+                      height={64}
                       className="h-full w-auto max-w-[120px] object-contain opacity-30 hover:opacity-60 transition-opacity duration-300 filter grayscale"
                     />
                   </div>

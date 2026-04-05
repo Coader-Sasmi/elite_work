@@ -1,7 +1,7 @@
 "use client";
-/* eslint-disable @next/next/no-img-element */
 
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { memo, useCallback, useState } from "react";
@@ -14,7 +14,6 @@ export const NavArr = [
   { title: "Contact", path: "/#contact" },
 ];
 
-// ── Memoized nav link to avoid re-renders ─────────────────────────────────────
 const NavLink = memo(({ item, onClick }: { item: typeof NavArr[0]; onClick?: () => void }) => {
   const pathname = usePathname();
   const isActive = item.path === pathname;
@@ -33,7 +32,6 @@ const NavLink = memo(({ item, onClick }: { item: typeof NavArr[0]; onClick?: () 
 });
 NavLink.displayName = "NavLink";
 
-// ── Mobile Drawer ─────────────────────────────────────────────────────────────
 const MobileDrawer = memo(function MobileDrawer({
   open,
   onClose,
@@ -67,7 +65,6 @@ const MobileDrawer = memo(function MobileDrawer({
               key={item.path}
               initial={{ opacity: 0, x: 24 }}
               animate={{ opacity: open ? 1 : 0, x: open ? 0 : 24 }}
-              // Use will-change to hint GPU compositing
               style={{ willChange: "opacity, transform" }}
               transition={{ delay: i * 0.05 + 0.08, duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
             >
@@ -104,18 +101,15 @@ const MobileDrawer = memo(function MobileDrawer({
   );
 });
 
-// ── Navbar ────────────────────────────────────────────────────────────────────
 export default function Navbar() {
   const [openDrawer, setOpenDrawer] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { scrollY } = useScroll();
 
-  // Stable reference — won't cause re-renders in children
   const handleClose = useCallback(() => setOpenDrawer(false), []);
   const toggleDrawer = useCallback(() => setOpenDrawer((prev) => !prev), []);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    // Avoid setState if value hasn't crossed threshold
     const shouldScroll = latest > 80;
     if (shouldScroll !== scrolled) setScrolled(shouldScroll);
   });
@@ -125,7 +119,6 @@ export default function Navbar() {
       <MobileDrawer open={openDrawer} onClose={handleClose} />
 
       <motion.nav
-        // Use will-change so browser composites the layer ahead of time
         style={{ willChange: "transform" }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
             ? "py-3 bg-[#0a0a0a]/90 backdrop-blur-2xl border-b border-white/5"
@@ -133,23 +126,20 @@ export default function Navbar() {
           }`}
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        // Slightly snappier entrance
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between">
 
-          {/* Logo — next/image would be faster, but keeping img per your eslint disable */}
+          {/* Logo ✅ */}
           <Link href="/" prefetch={true}>
             <motion.div whileHover={{ opacity: 0.8 }} transition={{ duration: 0.15 }}>
-              {/* Add explicit width/height to prevent layout shift */}
-              <img
-                src="main_logo.png"
+              <Image
+                src="/main_logo.png"
                 alt="Elite Work"
                 width={120}
                 height={40}
                 className="h-8 sm:h-9 lg:h-10 w-auto"
-                // Preload logo since it's above the fold
-                fetchPriority="high"
+                priority
               />
             </motion.div>
           </Link>

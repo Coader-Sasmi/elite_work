@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { CgProfile } from "react-icons/cg";
@@ -35,11 +36,15 @@ export default function AboutUs() {
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
               className="relative"
             >
-              <img
-                src="./about_img_1.jpg"
-                alt="Interior design"
-                className="w-full h-[520px] object-cover"
-              />
+              <div className="relative w-full h-[520px]">
+                <Image
+                  src="/about_img_1.jpg"
+                  alt="Interior design"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
               {/* Gold border accent */}
               <div className="absolute -bottom-4 -right-4 w-full h-full border border-[#C9A96E]/20 pointer-events-none" />
             </motion.div>
@@ -52,11 +57,14 @@ export default function AboutUs() {
               viewport={{ once: true }}
               transition={{ duration: 0.9, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             >
-              <img
-                src="./about_img_2.jpg"
-                alt="Interior design detail"
-                className="w-full h-40 lg:h-52 object-cover shadow-2xl"
-              />
+              <div className="relative w-full h-40 lg:h-52">
+                <Image
+                  src="/about_img_2.jpg"
+                  alt="Interior design detail"
+                  fill
+                  className="object-cover shadow-2xl"
+                />
+              </div>
               <div className="absolute inset-0 border border-[#C9A96E]/30 pointer-events-none" />
             </motion.div>
 

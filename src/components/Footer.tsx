@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { AiOutlineYoutube } from "react-icons/ai";
 import { FaPhone, FaWhatsapp } from "react-icons/fa";
@@ -13,7 +14,6 @@ export default function Footer() {
     { title: "About Us", path: "/#about" },
     { title: "Services", path: "/#services" },
     { title: "Portfolio", path: "/#projects" },
-    // { title: "Pricing", path: "/#price" },
     { title: "Terms & Conditions", path: "/term" },
     { title: "Privacy Policy", path: "/privacy" },
   ];
@@ -91,7 +91,13 @@ export default function Footer() {
           {/* Brand column */}
           <div className="flex flex-col gap-6 lg:col-span-1">
             <Link href="/">
-              <img src="./logo.png" alt="Elite Work" className="h-10 w-auto" />
+              <Image
+                src="/logo.png"
+                alt="Elite Work"
+                width={120}
+                height={40}
+                className="h-10 w-auto"
+              />
             </Link>
             <p className="text-white/30 text-sm leading-relaxed">
               Bengaluru&apos;s premier interior design studio, crafting extraordinary spaces since 1988.

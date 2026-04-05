@@ -1,50 +1,51 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { BsDoorOpen } from "react-icons/bs";
 import { GiWoodenChair } from "react-icons/gi";
 import { MdOutlineDesignServices } from "react-icons/md";
 import { TbSofa } from "react-icons/tb";
 
+const features = [
+  {
+    icon: <BsDoorOpen className="text-xl" />,
+    number: "01",
+    title: "Tailored Design Solutions",
+    subTitle:
+      "Every project begins with understanding you — your lifestyle, preferences, and aspirations — creating spaces that feel unmistakably yours.",
+  },
+  {
+    icon: <TbSofa className="text-xl" />,
+    number: "02",
+    title: "Seamless Execution",
+    subTitle:
+      "From mood boards to move-in, we orchestrate every element of your project with precision, transparency, and zero surprises.",
+  },
+  {
+    icon: <GiWoodenChair className="text-xl" />,
+    number: "03",
+    title: "Client-First Collaboration",
+    subTitle:
+      "Your input shapes every decision. We believe the best interiors are co-created — expert guidance meeting personal vision.",
+  },
+  {
+    icon: <MdOutlineDesignServices className="text-xl" />,
+    number: "04",
+    title: "Premium Craftsmanship",
+    subTitle:
+      "We work with curated craftspeople and premium suppliers — delivering finishes that stand the test of time.",
+  },
+];
+
+const images = [
+  { src: "/why_choose_1.jpg", span: "lg:col-span-7 col-span-12" },
+  { src: "/why_choose_2.jpg", span: "lg:col-span-5 col-span-12" },
+  { src: "/why_choose_3.jpg", span: "lg:col-span-5 col-span-12" },
+  { src: "/why_choose_4.jpg", span: "lg:col-span-7 col-span-12" },
+];
+
 export default function ChooseUs() {
-  const features = [
-    {
-      icon: <BsDoorOpen className="text-xl" />,
-      number: "01",
-      title: "Tailored Design Solutions",
-      subTitle:
-        "Every project begins with understanding you — your lifestyle, preferences, and aspirations — creating spaces that feel unmistakably yours.",
-    },
-    {
-      icon: <TbSofa className="text-xl" />,
-      number: "02",
-      title: "Seamless Execution",
-      subTitle:
-        "From mood boards to move-in, we orchestrate every element of your project with precision, transparency, and zero surprises.",
-    },
-    {
-      icon: <GiWoodenChair className="text-xl" />,
-      number: "03",
-      title: "Client-First Collaboration",
-      subTitle:
-        "Your input shapes every decision. We believe the best interiors are co-created — expert guidance meeting personal vision.",
-    },
-    {
-      icon: <MdOutlineDesignServices className="text-xl" />,
-      number: "04",
-      title: "Premium Craftsmanship",
-      subTitle:
-        "We work with curated craftspeople and premium suppliers — delivering finishes that stand the test of time.",
-    },
-  ];
-
-  const images = [
-    { src: "./why_choose_1.jpg", span: "lg:col-span-7 col-span-12" },
-    { src: "./why_choose_2.jpg", span: "lg:col-span-5 col-span-12" },
-    { src: "./why_choose_3.jpg", span: "lg:col-span-5 col-span-12" },
-    { src: "./why_choose_4.jpg", span: "lg:col-span-7 col-span-12" },
-  ];
-
   return (
     <section className="bg-[#111111] py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
@@ -127,11 +128,15 @@ export default function ChooseUs() {
                 transition={{ duration: 0.8, delay: i * 0.1 }}
                 whileHover={{ scale: 1.02 }}
               >
-                <img
-                  src={img.src}
-                  alt="Interior design"
-                  className="w-full h-52 object-cover transition-transform duration-700 hover:scale-105"
-                />
+                {/* Fixed-height wrapper required for next/image fill mode */}
+                <div className="relative w-full h-52">
+                  <Image
+                    src={img.src}
+                    alt="Interior design"
+                    fill
+                    className="object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
               </motion.div>
             ))}
           </motion.div>

@@ -1,36 +1,37 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { useState } from "react";
 import { CgProfile } from "react-icons/cg";
 import { FaStar } from "react-icons/fa";
 
+const testimonials = [
+  {
+    quote:
+      "I couldn't be happier with the transformation of my home. From the very first consultation, the team at Elite Work took the time to truly understand my vision. Every detail was considered, every finish was perfect. This isn't just interior design — it's art.",
+    name: "Raj Kumar R",
+    role: "Co-Founder, Elite Work",
+    rating: 5,
+  },
+  {
+    quote:
+      "Working with Elite Work was the best decision we made for our office renovation. The space is now a true reflection of our brand — sophisticated, functional, and incredibly inspiring. Our team productivity has visibly improved.",
+    name: "Priya Sharma",
+    role: "CEO, TechVentures Bangalore",
+    rating: 5,
+  },
+  {
+    quote:
+      "Our 3BHK apartment looked like a completely different space. The team was professional, punctual, and delivered beyond expectations. The design balances aesthetics with practicality perfectly.",
+    name: "Arjun Mehta",
+    role: "Homeowner, Whitefield",
+    rating: 5,
+  },
+];
+
 export default function Testimonial() {
   const [active, setActive] = useState(0);
-
-  const testimonials = [
-    {
-      quote:
-        "I couldn't be happier with the transformation of my home. From the very first consultation, the team at Elite Work took the time to truly understand my vision. Every detail was considered, every finish was perfect. This isn't just interior design — it's art.",
-      name: "Raj Kumar R",
-      role: "Co-Founder, Elite Work",
-      rating: 5,
-    },
-    {
-      quote:
-        "Working with Elite Work was the best decision we made for our office renovation. The space is now a true reflection of our brand — sophisticated, functional, and incredibly inspiring. Our team productivity has visibly improved.",
-      name: "Priya Sharma",
-      role: "CEO, TechVentures Bangalore",
-      rating: 5,
-    },
-    {
-      quote:
-        "Our 3BHK apartment looked like a completely different space. The team was professional, punctual, and delivered beyond expectations. The design balances aesthetics with practicality perfectly.",
-      name: "Arjun Mehta",
-      role: "Homeowner, Whitefield",
-      rating: 5,
-    },
-  ];
 
   return (
     <section className="bg-[#111111] py-24 lg:py-32 overflow-hidden">
@@ -45,13 +46,19 @@ export default function Testimonial() {
             viewport={{ once: true }}
             transition={{ duration: 0.9 }}
           >
-            <img
-              src="./testimonial_img.jpg"
-              alt="Happy client"
-              className="w-full h-[560px] object-cover"
-            />
+            {/* ✅ Fixed height wrapper for next/image fill */}
+            <div className="relative w-full h-[560px]">
+              <Image
+                src="/testimonial_img.jpg"
+                alt="Happy client"
+                fill
+                className="object-cover"
+              />
+            </div>
+
             {/* Gold border offset */}
             <div className="absolute -bottom-6 -right-6 w-48 h-48 border border-[#C9A96E]/20 pointer-events-none" />
+
             {/* Dark overlay block */}
             <div className="absolute bottom-8 left-8 right-8 bg-[#0a0a0a]/80 backdrop-blur-sm p-6 border border-white/5">
               <div className="flex gap-1 mb-3">

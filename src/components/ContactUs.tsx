@@ -2,6 +2,7 @@
 
 import emailjs from "@emailjs/browser";
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 import { useRef, useState } from "react";
 import { FaPhone, FaWhatsapp } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
@@ -335,10 +336,11 @@ export default function ContactUs() {
                     >
                         {/* Decorative image */}
                         <div className="relative overflow-hidden">
-                            <img
-                                src="./about_img_1.jpg"
+                            <Image
+                                src="/about_img_1.jpg"
                                 alt="Elite Work Studio"
-                                className="w-full h-52 object-cover"
+                                fill
+                                className="object-cover"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/80 via-transparent to-transparent" />
                             <div className="absolute bottom-4 left-4">
