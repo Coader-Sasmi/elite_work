@@ -335,7 +335,7 @@ export default function ContactUs() {
                         transition={{ duration: 0.9 }}
                     >
                         {/* Decorative image */}
-                        <div className="relative overflow-hidden">
+                        <div className="relative overflow-hidden h-72">
                             <Image
                                 src="/about_img_1.jpg"
                                 alt="Elite Work Studio"
