@@ -121,8 +121,8 @@ export default function Navbar() {
       <motion.nav
         style={{ willChange: "transform" }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-            ? "py-3 bg-[#0a0a0a]/90 backdrop-blur-2xl border-b border-white/5"
-            : "py-4 sm:py-5 lg:py-6 bg-transparent"
+          ? "py-3 bg-[#0a0a0a]/90 backdrop-blur-2xl border-b border-white/5"
+          : "py-4 sm:py-5 lg:py-6 bg-transparent"
           }`}
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -138,7 +138,7 @@ export default function Navbar() {
                 alt="Elite Work"
                 width={120}
                 height={40}
-                className="h-8 sm:h-9 lg:h-10 w-auto"
+                className="h-16 w-auto"
                 priority
               />
             </motion.div>

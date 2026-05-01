@@ -2,11 +2,39 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { CgProfile } from "react-icons/cg";
 import { FaStar } from "react-icons/fa";
 
 const testimonials = [
+  {
+    quote:
+      "They are really professional and on time delivery by the team. Once we saw the sample pictures in website we strongly decided to go with them for our dream house project. And we are happy about our decision. Well planned spacing and vibrant color interior design and structural work at its best. Thanks Elite Interiors team Special mention to Mr. Rajkumar sir for all the process executed.we are very grateful to you sir.we are very happy for such a beautiful interior sir thank u 🙏",
+    name: "kokila HC",
+    role: "",
+    rating: 5,
+  },
+  {
+    quote:
+      "I had the pleasure of working with Mr. Rajkumar and his team from Elitework. Their dedication to excellence and attention to detail transformed my home into a stunning space. The team's creativity, professionalism, and timely execution exceeded my expectations. I highly recommend their services for anyone seeking top-notch interior design.",
+    name: "Tinu Varghese",
+    role: "",
+    rating: 5,
+  },
+  {
+    quote:
+      "Quality work done on time, Appreciated the changes I need they did without any extra charges.",
+    name: "Ravi Vishwakrma",
+    role: "",
+    rating: 5,
+  },
+  {
+    quote:
+      "Elitework exceeded expectations! Exceptional craftsmanship, attention to detail, and a beautifully finished project. Highly recommend Elitework for top-notch carpentry!",
+    name: "Dhurv Yadav",
+    role: "",
+    rating: 5,
+  },
   {
     quote:
       "I couldn't be happier with the transformation of my home. From the very first consultation, the team at Elite Work took the time to truly understand my vision. Every detail was considered, every finish was perfect. This isn't just interior design — it's art.",
@@ -28,10 +56,60 @@ const testimonials = [
     role: "Homeowner, Whitefield",
     rating: 5,
   },
+  {
+    quote:
+      "Thank you Mr. Raj Kumar work done on time and great work.",
+    name: "Raghu poojari",
+    role: "",
+    rating: 5,
+  },
+  {
+    quote:
+      "Highly recommended budget friendly",
+    name: "Ashish Yadav",
+    role: "",
+    rating: 5,
+  },
+  {
+    quote:
+      "Really happy with the interior by Elitework. Just how I wanted, thank's Raj.",
+    name: "Abhishek Sharma",
+    role: "",
+    rating: 5,
+  },
+  {
+    quote:
+      "Had an amazing experience thankyou for such commendable work.",
+    name: "prateek ravi",
+    role: "",
+    rating: 5,
+  },
 ];
+
+const SLIDE_INTERVAL = 4000; // ms between auto-slides
 
 export default function Testimonial() {
   const [active, setActive] = useState(0);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const startAutoSlide = () => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
+    intervalRef.current = setInterval(() => {
+      setActive((prev) => (prev + 1) % testimonials.length);
+    }, SLIDE_INTERVAL);
+  };
+
+  useEffect(() => {
+    startAutoSlide();
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, []);
+
+  const handleDotClick = (i: number) => {
+    setActive(i);
+    startAutoSlide(); // reset the timer so it doesn't jump immediately
+  };
 
   return (
     <section className="bg-[#111111] py-24 lg:py-32 overflow-hidden">
@@ -46,7 +124,7 @@ export default function Testimonial() {
             viewport={{ once: true }}
             transition={{ duration: 0.9 }}
           >
-            {/* ✅ Fixed height wrapper for next/image fill */}
+            {/* Fixed height wrapper for next/image fill */}
             <div className="relative w-full h-[560px]">
               <Image
                 src="/testimonial_img.jpg"
@@ -127,22 +205,40 @@ export default function Testimonial() {
               </div>
             </motion.div>
 
-            {/* Pagination dots */}
+            {/* Pagination dots with animated progress */}
             <div className="flex items-center gap-3">
               {testimonials.map((_, i) => (
                 <button
                   key={i}
-                  onClick={() => setActive(i)}
-                  className={`transition-all duration-300 ${active === i
-                      ? "w-8 h-px bg-[#C9A96E]"
-                      : "w-4 h-px bg-white/20 hover:bg-white/40"
-                    }`}
-                />
+                  onClick={() => handleDotClick(i)}
+                  className="relative overflow-hidden transition-all duration-300"
+                  style={{ width: active === i ? 32 : 16, height: 2 }}
+                >
+                  {/* Background track */}
+                  <span className="absolute inset-0 bg-white/20" />
+                  {/* Animated fill for active dot */}
+                  {active === i && (
+                    <span
+                      className="absolute inset-0 bg-[#C9A96E] origin-left"
+                      style={{
+                        animation: `progress ${SLIDE_INTERVAL}ms linear forwards`,
+                      }}
+                    />
+                  )}
+                </button>
               ))}
             </div>
           </div>
         </div>
       </div>
+
+      {/* Progress animation keyframes */}
+      <style jsx>{`
+        @keyframes progress {
+          from { transform: scaleX(0); }
+          to   { transform: scaleX(1); }
+        }
+      `}</style>
     </section>
   );
 }
