@@ -56,7 +56,7 @@ body {
   transition: all ease-in-out 0.3s !important;
   transform: translateY(-1em);
 }
-.indivisual_gallery_div_img:odd {
+.indivisual_gallery_div_img:nth-child(odd) {
   animation: drop 500ms ease-in-out forwards;
 }
 .galaxy_slider_card {

@@ -7,7 +7,7 @@ import { memo, useRef } from "react";
 // ── Static data outside component ────────────────────────────────────────────
 const stats = [
   { value: "25+", label: "Years of Excellence" },
-  { value: "850+", label: "Projects Completed" },
+  { value: "1650+", label: "Projects Completed" },
   { value: "95%", label: "Client Satisfaction" },
 ];
 
@@ -17,7 +17,7 @@ const EASE = [0.16, 1, 0.3, 1] as const;
 const StatItem = memo(({ value, label }: { value: string; label: string }) => (
   <div className="flex flex-col gap-1">
     <span className="text-2xl sm:text-3xl lg:text-4xl font-light text-white">{value}</span>
-    <span className="text-[10px] sm:text-xs text-white/40 tracking-[0.15em] uppercase">{label}</span>
+    <span className="text-[10px] sm:text-xs text-white/70 tracking-[0.15em] uppercase">{label}</span>
   </div>
 ));
 StatItem.displayName = "StatItem";
@@ -49,15 +49,6 @@ export default function HeroSec() {
       <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/60 to-[#0a0a0a]/20" />
       <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/80 via-transparent to-transparent" />
 
-      {/* Decorative gold line */}
-      {/* <motion.div
-        className="hidden md:block absolute left-8 lg:left-12 top-1/2 w-px bg-gradient-to-b from-transparent via-[#C9A96E] to-transparent"
-        style={{ height: "200px", y: "-50%" }}
-        initial={{ scaleY: 0, opacity: 0 }}
-        animate={{ scaleY: 1, opacity: 1 }}
-        transition={{ delay: 1.2, duration: 1.2, ease: EASE }}
-      /> */}
-
       {/* Content */}
       <motion.div
         className="relative z-10 w-full max-w-7xl mx-auto px-5 pt-32 pb-16 sm:pb-20 lg:pb-28"
@@ -74,7 +65,7 @@ export default function HeroSec() {
           >
             <div className="w-8 hidden md:block sm:w-12 h-px bg-[#C9A96E] shrink-0" />
             <span className="text-[#C9A96E] hidden md:block text-xs font-medium tracking-[0.3em] uppercase">
-              Inspired Interiors Since 1988
+              Inspired Interiors Since 2001
             </span>
           </motion.div>
 
@@ -94,12 +85,12 @@ export default function HeroSec() {
 
           {/* Subheading */}
           <motion.p
-            className="text-white/50 text-base md:text-lg font-light max-w-xl leading-relaxed mb-12"
+            className="text-white text-base md:text-lg font-light max-w-xl leading-relaxed mb-12"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
           >
-            Bengaluru&apos;s premier interior design studio — where your vision
+            Bengaluru&apos;s premier interior design studio - where your vision
             meets our passion for creating extraordinary living experiences.
           </motion.p>
 
@@ -151,11 +142,11 @@ export default function HeroSec() {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.6, duration: 0.8 }}
       >
-        <span className="text-white/30 text-xs tracking-[0.2em] uppercase rotate-90 mb-4">
+        <span className="text-white text-xs tracking-[0.2em] uppercase rotate-90 mb-4">
           Scroll
         </span>
         <motion.div
-          className="w-px h-16 bg-gradient-to-b from-white/30 to-transparent"
+          className="w-px h-16 bg-gradient-to-b from-white to-transparent"
           animate={{ scaleY: [1, 0.5, 1] }}
           transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
         />
