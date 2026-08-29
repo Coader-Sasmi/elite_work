@@ -33,7 +33,7 @@ export default function Services() {
       image: "./service_1.jpg",
       number: "04",
       title: "Renovation & Turnkey Projects",
-      subTitle: "Complete transformation from concept to completion — we handle every detail.",
+      subTitle: "Complete transformation from concept to completion - we handle every detail.",
       tag: "Full Renovations",
     },
   ];
@@ -67,13 +67,13 @@ export default function Services() {
             </motion.h2>
           </div>
           <motion.p
-            className="text-white/40 text-base leading-relaxed max-w-sm"
+            className="text-white/80 text-base leading-relaxed max-w-lg"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            From bespoke concept development to flawless final installation —
+            From bespoke concept development to flawless final installation -
             every project is a new story waiting to be told.
           </motion.p>
         </div>
@@ -111,7 +111,7 @@ export default function Services() {
               {/* Content */}
               <div className="absolute inset-0 p-8 flex flex-col justify-between">
                 <div className="flex items-start justify-between">
-                  <span className="text-[#C9A96E]/50 text-xs tracking-[0.2em] font-medium uppercase">
+                  <span className="text-[#C9A96E] text-xs tracking-[0.2em] font-medium uppercase">
                     {item.tag}
                   </span>
                   <motion.div
@@ -127,12 +127,12 @@ export default function Services() {
                 </div>
 
                 <div className="flex flex-col gap-3">
-                  <span className="text-white/20 text-6xl font-light leading-none">
+                  <span className="text-white/50 text-6xl font-light leading-none">
                     {item.number}
                   </span>
                   <h3 className="text-white text-xl font-light">{item.title}</h3>
                   <motion.p
-                    className="text-white/50 text-sm leading-relaxed max-w-xs"
+                    className="text-white/70 text-sm leading-relaxed max-w-xs"
                     animate={{ opacity: hoveredIndex === i ? 1 : 0.6 }}
                     transition={{ duration: 0.4 }}
                   >
@@ -152,13 +152,13 @@ export default function Services() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <motion.button
+          {/* <motion.button
             whileHover={{ scale: 1.03, backgroundColor: "#D4B87A" }}
             whileTap={{ scale: 0.97 }}
             className="px-10 py-4 bg-[#C9A96E] text-[#0a0a0a] text-sm font-semibold tracking-[0.15em] uppercase transition-colors duration-300"
           >
             View All Services
-          </motion.button>
+          </motion.button> */}
         </motion.div>
       </div>
     </section>
