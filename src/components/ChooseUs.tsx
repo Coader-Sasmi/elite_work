@@ -13,7 +13,7 @@ const features = [
     number: "01",
     title: "Tailored Design Solutions",
     subTitle:
-      "Every project begins with understanding you — your lifestyle, preferences, and aspirations — creating spaces that feel unmistakably yours.",
+      "Every project begins with understanding you - your lifestyle, preferences, and aspirations - creating spaces that feel unmistakably yours.",
   },
   {
     icon: <TbSofa className="text-xl" />,
@@ -27,14 +27,14 @@ const features = [
     number: "03",
     title: "Client-First Collaboration",
     subTitle:
-      "Your input shapes every decision. We believe the best interiors are co-created — expert guidance meeting personal vision.",
+      "Your input shapes every decision. We believe the best interiors are co-created - expert guidance meeting personal vision.",
   },
   {
     icon: <MdOutlineDesignServices className="text-xl" />,
     number: "04",
     title: "Premium Craftsmanship",
     subTitle:
-      "We work with curated craftspeople and premium suppliers — delivering finishes that stand the test of time.",
+      "We work with curated craftspeople and premium suppliers - delivering finishes that stand the test of time.",
   },
 ];
 
@@ -87,11 +87,11 @@ export default function ChooseUs() {
                 >
                   {/* Number + icon */}
                   <div className="flex flex-col items-center gap-2 flex-shrink-0">
-                    <span className="text-[#C9A96E]/30 text-xs font-medium tracking-wider">
+                    <span className="text-[#C9A96E] text-xs font-medium tracking-wider">
                       {item.number}
                     </span>
-                    <div className="w-10 h-10 border border-white/10 group-hover:border-[#C9A96E]/30 rounded-full flex items-center justify-center transition-colors duration-500">
-                      <span className="text-white/30 group-hover:text-[#C9A96E] transition-colors duration-500">
+                    <div className="w-10 h-10 border border-white/70 group-hover:border-[#C9A96E]/80 rounded-full flex items-center justify-center transition-colors duration-500">
+                      <span className="text-white/70 group-hover:text-[#C9A96E] transition-colors duration-500">
                         {item.icon}
                       </span>
                     </div>
@@ -103,7 +103,7 @@ export default function ChooseUs() {
                   {/* Text */}
                   <div className="flex flex-col gap-2 pt-2">
                     <h3 className="text-white text-base font-medium">{item.title}</h3>
-                    <p className="text-white/40 text-sm leading-relaxed">{item.subTitle}</p>
+                    <p className="text-white/70 text-sm leading-relaxed">{item.subTitle}</p>
                   </div>
                 </motion.div>
               ))}
@@ -144,21 +144,21 @@ export default function ChooseUs() {
 
         {/* Stats bar */}
         <motion.div
-          className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/5"
+          className="mt-24 grid grid-cols-2 md:grid-cols-3 gap-px bg-white/30"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           {[
-            { value: "850+", label: "Projects Delivered" },
+            { value: "1650+", label: "Projects Delivered" },
             { value: "25+", label: "Years of Experience" },
-            { value: "95%", label: "Client Retention" },
-            { value: "12+", label: "Design Awards" },
+            { value: "87%", label: "Client Retention" },
+            // { value: "12+", label: "Design Awards" },
           ].map((stat, i) => (
             <div key={i} className="bg-[#111111] px-8 py-10 flex flex-col gap-2">
-              <span className="text-4xl font-light text-white">{stat.value}</span>
-              <span className="text-white/30 text-xs tracking-[0.15em] uppercase">{stat.label}</span>
+              <span className="text-4xl font-light text-white font-bold">{stat.value}</span>
+              <span className="text-white/70 text-xs font-medium tracking-[0.15em] uppercase">{stat.label}</span>
             </div>
           ))}
         </motion.div>

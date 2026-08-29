@@ -8,7 +8,7 @@ import { memo, useRef } from "react";
 const stats = [
   { value: "25+", label: "Years of Excellence" },
   { value: "1650+", label: "Projects Completed" },
-  { value: "95%", label: "Client Satisfaction" },
+  { value: "87%", label: "Client Satisfaction" },
 ];
 
 const EASE = [0.16, 1, 0.3, 1] as const;
