@@ -51,7 +51,7 @@ export default function AboutUs() {
 
             {/* Second image — floating */}
             <motion.div
-              className="absolute -bottom-12 right-6 lg:-right-12 w-48 lg:w-64"
+              className="absolute -bottom-12 right-6 lg:-right-12 w-48 lg:w-64 pointer-events-none"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -70,7 +70,7 @@ export default function AboutUs() {
 
             {/* Badge */}
             <motion.div
-              className="absolute -left-6 top-1/3 bg-[#C9A96E] p-6 text-center"
+              className="absolute -left-6 top-1/3 bg-[#C9A96E] p-6 text-center pointer-events-none"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -85,7 +85,7 @@ export default function AboutUs() {
 
           {/* ── Right: Content ── */}
           <motion.div
-            className="flex flex-col gap-8 pt-12 lg:pt-0"
+            className="relative z-10 flex flex-col gap-8 pt-12 lg:pt-0"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -120,7 +120,7 @@ export default function AboutUs() {
 
             {/* Body text */}
             <motion.div
-              className="text-white/50 text-base leading-relaxed"
+              className="text-white/90 text-base leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -130,10 +130,10 @@ export default function AboutUs() {
                 Our dedicated team of designers works closely with you to understand
                 your vision and bring it to life with thoughtful attention to detail.
                 Whether it&apos;s transforming a single room or an entire home.{" "}
-                <AnimatePresence initial={false}>
-                  {isExpanded && (
+                <AnimatePresence mode="wait" initial={false}>
+                  {isExpanded ? (
                     <motion.span
-                      key="expanded"
+                      key="expanded-text"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
@@ -143,14 +143,25 @@ export default function AboutUs() {
                       interior design in Bengaluru. Our expert team brings creativity
                       and precision to every project, transforming homes into
                       personalized havens. From modern to timeless, minimalist to
-                      luxurious — we cater to all styles, ensuring your space reflects
+                      luxurious - we cater to all styles, ensuring your space reflects
                       your unique taste. We handle everything from the first concept
                       to the final detail, so you can enjoy a seamless and inspiring
                       design journey.
                     </motion.span>
+                  ) : (
+                    <motion.span
+                      key="collapsed-text"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.4 }}
+                      onClick={() => setIsExpanded(true)}
+                      className="cursor-pointer"
+                    >
+                      ...
+                    </motion.span>
                   )}
                 </AnimatePresence>
-                {!isExpanded && <span>...</span>}
               </p>
             </motion.div>
 
@@ -164,10 +175,10 @@ export default function AboutUs() {
             >
               {features.map((item, i) => (
                 <div key={i} className="flex items-center gap-3">
-                  <div className="w-5 h-5 border border-[#C9A96E]/40 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-5 h-5 border border-[#C9A96E] rounded-full flex items-center justify-center flex-shrink-0">
                     <TiTick className="text-[#C9A96E] text-xs" />
                   </div>
-                  <span className="text-white/60 text-sm">{item}</span>
+                  <span className="text-white/80 text-sm">{item}</span>
                 </div>
               ))}
             </motion.div>
@@ -181,8 +192,9 @@ export default function AboutUs() {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <button
-                onClick={() => setIsExpanded(!isExpanded)}
-                className="text-[#C9A96E] text-sm font-medium tracking-[0.1em] uppercase border-b border-[#C9A96E]/30 pb-0.5 hover:border-[#C9A96E] transition-colors duration-300"
+                type="button"
+                onClick={() => setIsExpanded((prev) => !prev)}
+                className="relative z-20 cursor-pointer text-[#C9A96E] text-sm font-medium tracking-[0.1em] uppercase border-b border-[#C9A96E]/30 pb-0.5 hover:border-[#C9A96E] transition-colors duration-300"
               >
                 {isExpanded ? "Show Less" : "Our Story"}
               </button>
@@ -192,7 +204,7 @@ export default function AboutUs() {
                     <FaPhoneAlt className="text-white/40 text-xs group-hover:text-[#C9A96E] transition-colors duration-300" />
                   </div>
                   <div>
-                    <p className="text-white/30 text-xs tracking-wider uppercase">Call Us</p>
+                    <p className="text-white/60 text-xs tracking-wider uppercase">Call Us</p>
                     <p className="text-white text-sm font-medium">+(91) 7406299605</p>
                   </div>
                 </div>
@@ -201,7 +213,7 @@ export default function AboutUs() {
 
             {/* Founders */}
             <motion.div
-              className="pt-4 border-t border-white/5 flex flex-col gap-4"
+              className="pt-4 border-t border-white/30 flex flex-col gap-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -215,7 +227,7 @@ export default function AboutUs() {
                   <CgProfile className="text-3xl text-[#C9A96E]/60" />
                   <div>
                     <p className="text-white text-sm font-medium">{person.name}</p>
-                    <p className="text-white/30 text-xs">{person.role}</p>
+                    <p className="text-white/60 text-xs">{person.role}</p>
                   </div>
                 </div>
               ))}
