@@ -128,7 +128,7 @@ export default function Navbar() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-5 flex items-center justify-between">
 
           {/* Logo ✅ */}
           <Link href="/" prefetch={true}>

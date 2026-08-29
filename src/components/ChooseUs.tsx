@@ -48,7 +48,7 @@ const images = [
 export default function ChooseUs() {
   return (
     <section className="bg-[#111111] py-24 lg:py-32">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="max-w-7xl mx-auto px-5">
 
         {/* Header */}
         <div className="flex items-center gap-4 mb-6">

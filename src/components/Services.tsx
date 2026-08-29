@@ -43,7 +43,7 @@ export default function Services() {
       id="services"
       className="bg-[#0d0d0d] py-24 lg:py-32"
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="max-w-7xl mx-auto px-5">
 
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">

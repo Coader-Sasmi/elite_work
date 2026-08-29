@@ -22,7 +22,7 @@ body {
 
 @layer components {
   .main-container {
-    @apply container mx-auto px-6;
+    @apply container mx-auto px-5;
   }
   .heading-style {
     @apply font-semibold text-3xl tracking-wider;

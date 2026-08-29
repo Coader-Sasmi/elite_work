@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     siteName: "Elite Work",
     images: [
       {
-        url: "/logo.png",
+        url: "/main_logo.png",
         width: 1200,
         height: 630,
         alt: "Elite Work Interior Design",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     title: "Elite Work | Premium Interior Design",
     description:
       "Elegant and functional spaces designed for your lifestyle. Discover Elite Work's interior design services.",
-    images: ["/logo.png"],
+    images: ["/main_logo.png"],
   },
 };
 

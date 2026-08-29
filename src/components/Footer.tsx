@@ -50,7 +50,7 @@ export default function Footer() {
 
       {/* CTA Banner */}
       <div className="border-b border-white/5">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16">
+        <div className="max-w-7xl mx-auto px-5 py-16">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
             <div>
               <h3 className="text-3xl lg:text-4xl font-light text-white mb-3">
@@ -85,18 +85,18 @@ export default function Footer() {
       </div>
 
       {/* Main footer content */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16">
+      <div className="max-w-7xl mx-auto px-5 py-16">
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-12">
 
           {/* Brand column */}
           <div className="flex flex-col gap-6 lg:col-span-1">
             <Link href="/">
               <Image
-                src="/logo.png"
+                src="/main_logo.png"
                 alt="Elite Work"
                 width={120}
                 height={40}
-                className="h-10 w-auto"
+                className="h-16 w-auto"
               />
             </Link>
             <p className="text-white/30 text-sm leading-relaxed">

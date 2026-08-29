@@ -60,7 +60,7 @@ export default function HeroSec() {
 
       {/* Content */}
       <motion.div
-        className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 pt-24 pb-16 sm:pb-20 lg:pb-28"
+        className="relative z-10 w-full max-w-7xl mx-auto px-5 pt-32 pb-16 sm:pb-20 lg:pb-28"
         style={{ opacity }}
       >
         <div className="max-w-4xl">
