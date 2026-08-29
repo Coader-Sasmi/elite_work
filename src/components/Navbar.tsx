@@ -154,7 +154,7 @@ export default function Navbar() {
                 transition={{ delay: 0.08 * i + 0.3, duration: 0.4 }}
               >
                 <Link href={item.path} prefetch={true}>
-                  <span className="relative text-white/60 hover:text-white text-sm font-medium tracking-[0.08em] uppercase transition-colors duration-200 group">
+                  <span className="relative text-white text-sm font-medium tracking-[0.08em] uppercase transition-colors duration-200 group">
                     {item.title}
                     <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#C9A96E] group-hover:w-full transition-all duration-200 ease-out" />
                   </span>
@@ -175,7 +175,7 @@ export default function Navbar() {
             >
               <Link href="/#contact" prefetch={true}>
                 <motion.button
-                  whileHover={{ scale: 1.02, backgroundColor: "#D4B87A" }}
+                  whileHover={{ scale: 1.02, backgroundColor: "#c59e4b" }}
                   whileTap={{ scale: 0.98 }}
                   className="px-6 py-2.5 bg-[#C9A96E] text-[#0a0a0a] text-sm font-semibold tracking-[0.1em] uppercase rounded-sm transition-colors duration-200"
                 >
