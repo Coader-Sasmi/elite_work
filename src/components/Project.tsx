@@ -80,7 +80,7 @@ export default function Project() {
                 whileTap={{ scale: 0.96 }}
                 className={`px-5 py-2 text-xs tracking-[0.15em] uppercase transition-all duration-300 ${activeCategory === cat
                     ? "bg-[#C9A96E] text-[#0a0a0a] font-semibold"
-                    : "border text-white border-white/30 hover:border-white/50"
+                    : "border text-white border-white/30 hover:border-white/100"
                   }`}
               >
                 {cat}

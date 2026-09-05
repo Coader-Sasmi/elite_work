@@ -44,14 +44,14 @@ export default function Skills() {
             </div>
 
             <motion.p
-              className="text-white/40 text-base leading-relaxed"
+              className="text-white/80 text-base leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               Our team brings decades of combined expertise across every
-              discipline of interior design — from space planning and material
+              discipline of interior design - from space planning and material
               selection to full-scale project management.
             </motion.p>
 
@@ -67,7 +67,7 @@ export default function Skills() {
                   transition={{ duration: 0.6, delay: i * 0.1 }}
                 >
                   <div className="flex justify-between items-center">
-                    <span className="text-white/60 text-sm">{skill.title}</span>
+                    <span className="text-white/80 text-sm">{skill.title}</span>
                     <span className="text-[#C9A96E] text-sm font-light">{skill.number}%</span>
                   </div>
                   <ProgressBar progress={skill.number} />

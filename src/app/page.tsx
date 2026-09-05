@@ -25,7 +25,7 @@ export default function Home() {
       <Skills />
       <Testimonial />
       <ContactUs />
-      <News />
+      {/* <News /> */}
     </>
   );
 }

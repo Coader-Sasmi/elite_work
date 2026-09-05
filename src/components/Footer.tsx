@@ -46,17 +46,17 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-[#060606] border-t border-white/5">
+    <footer className="bg-[#060606] border-t border-white/10">
 
       {/* CTA Banner */}
-      <div className="border-b border-white/5">
+      <div className="border-b border-white/10">
         <div className="max-w-7xl mx-auto px-5 py-16">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
             <div>
               <h3 className="text-3xl lg:text-4xl font-light text-white mb-3">
                 Ready to transform your space?
               </h3>
-              <p className="text-white/30 text-sm">
+              <p className="text-white/50 text-sm">
                 Book a free consultation and let&apos;s begin your story.
               </p>
             </div>
@@ -99,7 +99,7 @@ export default function Footer() {
                 className="h-16 w-auto"
               />
             </Link>
-            <p className="text-white/30 text-sm leading-relaxed">
+            <p className="text-white/80 text-sm leading-relaxed">
               Bengaluru&apos;s premier interior design studio, crafting extraordinary spaces since 1988.
             </p>
             {/* Socials */}
@@ -108,7 +108,7 @@ export default function Footer() {
                 <Link key={i} href={s.href} target="_blank" aria-label={s.label}>
                   <motion.div
                     whileHover={{ y: -2, borderColor: "#C9A96E", color: "#C9A96E" }}
-                    className="w-9 h-9 border border-white/10 rounded-full flex items-center justify-center text-white/40 transition-colors duration-300"
+                    className="w-9 h-9 border border-white/60 rounded-full flex items-center justify-center text-white/60 transition-colors duration-300"
                   >
                     {s.icon}
                   </motion.div>
@@ -119,13 +119,13 @@ export default function Footer() {
 
           {/* Navigation */}
           <div className="flex flex-col gap-6">
-            <h4 className="text-white/20 text-xs tracking-[0.25em] uppercase font-medium">
+            <h4 className="text-white/50 text-xs tracking-[0.25em] uppercase font-medium">
               Navigation
             </h4>
             <div className="flex flex-col gap-3">
               {navLinks.map((link, i) => (
                 <Link key={i} href={link.path}>
-                  <span className="text-white/40 hover:text-[#C9A96E] text-sm transition-colors duration-300">
+                  <span className="text-white/80 hover:text-[#C9A96E] text-sm transition-colors duration-300">
                     {link.title}
                   </span>
                 </Link>
@@ -135,7 +135,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div className="flex flex-col gap-6">
-            <h4 className="text-white/20 text-xs tracking-[0.25em] uppercase font-medium">
+            <h4 className="text-white/50 text-xs tracking-[0.25em] uppercase font-medium">
               Contact
             </h4>
             <div className="flex flex-col gap-5">
@@ -144,7 +144,7 @@ export default function Footer() {
                   icon: <FaPhone className="text-xs rotate-90" />,
                   content: (
                     <Link href="tel:+917406299605">
-                      <p className="text-white/40 hover:text-[#C9A96E] text-sm transition-colors duration-300">
+                      <p className="text-white/80 hover:text-[#C9A96E] text-sm transition-colors duration-300">
                         +(91) 7406299605
                       </p>
                     </Link>
@@ -154,7 +154,7 @@ export default function Footer() {
                   icon: <IoIosMail className="text-sm" />,
                   content: (
                     <Link href="mailto:infoeliteworkk@gmail.com">
-                      <p className="text-white/40 hover:text-[#C9A96E] text-sm transition-colors duration-300">
+                      <p className="text-white/80 hover:text-[#C9A96E] text-sm transition-colors duration-300">
                         infoeliteworkk@gmail.com
                       </p>
                     </Link>
@@ -163,14 +163,14 @@ export default function Footer() {
                 {
                   icon: <IoLocationSharp className="text-sm" />,
                   content: (
-                    <p className="text-white/40 text-sm leading-relaxed">
+                    <p className="text-white/80 text-sm leading-relaxed">
                       Elitework, Bannerghatta Road,<br />Karnataka 560083
                     </p>
                   ),
                 },
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-3 group">
-                  <div className="w-7 h-7 border border-white/10 rounded-full flex items-center justify-center text-white/20 flex-shrink-0 mt-0.5 group-hover:border-[#C9A96E]/30 transition-colors duration-300">
+                  <div className="w-7 h-7 border border-white/60 rounded-full flex items-center justify-center text-white/60 flex-shrink-0 mt-0.5 group-hover:border-[#C9A96E]/80 transition-colors duration-300">
                     {item.icon}
                   </div>
                   {item.content}
@@ -181,7 +181,7 @@ export default function Footer() {
 
           {/* Gallery */}
           <div className="flex flex-col gap-6">
-            <h4 className="text-white/20 text-xs tracking-[0.25em] uppercase font-medium">
+            <h4 className="text-white/60 text-xs tracking-[0.25em] uppercase font-medium">
               Gallery
             </h4>
             <LightBox images={galleryImages} />
@@ -189,11 +189,11 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-white/20 text-xs tracking-wider">
+        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-white/80 text-xs tracking-wider">
             &copy; {new Date().getFullYear()} Elite Work. All rights reserved.
           </p>
-          <p className="text-white/10 text-xs">
+          <p className="text-white/80 text-xs">
             Crafting extraordinary interiors in Bengaluru.
           </p>
         </div>

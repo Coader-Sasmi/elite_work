@@ -67,9 +67,9 @@ export default function RootLayout({ children }: Props) {
           href="https://api.whatsapp.com/send?phone=917406299605"
           target="_blank"
           rel="noopener noreferrer"
-          className="fixed bottom-10 right-4 z-50 flex items-center justify-center w-12 h-12 bg-green-500 rounded-full shadow-lg hover:bg-green-600 transition hover:scale-110"
+          className="fixed bottom-10 right-4 z-50 flex items-center justify-center w-16 h-16 bg-green-500 rounded-full shadow-lg hover:bg-green-600 transition hover:scale-110"
         >
-          <FaWhatsapp className="text-white w-6 h-6" />
+          <FaWhatsapp className="text-white w-12 h-12" />
         </Link>
 
         {children}

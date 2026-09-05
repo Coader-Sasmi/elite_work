@@ -1,6 +1,6 @@
 export default function page() {
   return (
-    <aside className="main-container py-10 flex flex-col gap-6">
+    <aside className="max-w-7xl mx-auto px-5 text-white/70 py-10 flex flex-col gap-6">
       <h1 className="font-semibold text-lg text-primary">
         Terms and Conditions for Elite work Design Services
       </h1>

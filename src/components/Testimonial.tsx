@@ -138,7 +138,7 @@ export default function Testimonial() {
             <div className="absolute -bottom-6 -right-6 w-48 h-48 border border-[#C9A96E]/20 pointer-events-none" />
 
             {/* Dark overlay block */}
-            <div className="absolute bottom-8 left-8 right-8 bg-[#0a0a0a]/80 backdrop-blur-sm p-6 border border-white/5">
+            <div className="absolute bottom-8 left-8 right-8 bg-[#0a0a0a]/80 backdrop-blur-sm p-6 border border-white/10">
               <div className="flex gap-1 mb-3">
                 {[...Array(5)].map((_, i) => (
                   <FaStar key={i} className="text-[#C9A96E] text-xs" />
@@ -196,7 +196,7 @@ export default function Testimonial() {
               </p>
 
               {/* Author */}
-              <div className="flex items-center gap-4 pt-2 border-t border-white/5">
+              <div className="flex items-center gap-4 pt-2 border-t border-white/10">
                 <CgProfile className="text-4xl text-[#C9A96E]/50" />
                 <div>
                   <p className="text-white text-base font-medium">{testimonials[active].name}</p>

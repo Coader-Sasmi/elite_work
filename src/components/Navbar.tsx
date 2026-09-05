@@ -21,7 +21,7 @@ const NavLink = memo(({ item, onClick }: { item: typeof NavArr[0]; onClick?: () 
   return (
     <Link href={item.path} onClick={onClick} prefetch={true}>
       <div
-        className={`py-4 border-b border-white/5 flex items-center justify-between group transition-colors duration-200 ${isActive ? "text-[#C9A96E]" : "text-white/50 hover:text-white"
+        className={`py-4 border-b border-white/10 flex items-center justify-between group transition-colors duration-200 ${isActive ? "text-[#C9A96E]" : "text-white/50 hover:text-white"
           }`}
       >
         <span className="text-xl font-light tracking-wide">{item.title}</span>
@@ -44,7 +44,7 @@ const MobileDrawer = memo(function MobileDrawer({
       open={open}
       onClose={onClose}
       anchor="right"
-      drawerStyle="w-[80vw] sm:w-[60vw] md:w-[45vw] h-screen bg-[#080808] border-l border-white/5"
+      drawerStyle="w-[80vw] sm:w-[60vw] md:w-[45vw] h-screen bg-[#080808] border-l border-white/10"
     >
       <div className="flex flex-col h-full p-6 sm:p-8">
 
@@ -83,7 +83,7 @@ const MobileDrawer = memo(function MobileDrawer({
         </div>
 
         {/* Contact info */}
-        <div className="mt-auto pt-8 sm:pt-12 border-t border-white/5 flex flex-col gap-3">
+        <div className="mt-auto pt-8 sm:pt-12 border-t border-white/10 flex flex-col gap-3">
           <p className="text-white/20 text-xs tracking-[0.2em] uppercase mb-1">Get In Touch</p>
           <Link href="tel:+917406299605">
             <p className="text-white/40 text-sm hover:text-[#C9A96E] transition-colors duration-200">
@@ -121,7 +121,7 @@ export default function Navbar() {
       <motion.nav
         style={{ willChange: "transform" }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-          ? "py-3 bg-[#0a0a0a]/90 backdrop-blur-2xl border-b border-white/5"
+          ? "py-3 bg-[#0a0a0a]/90 backdrop-blur-2xl border-b border-white/10"
           : "py-4 sm:py-5 lg:py-6 bg-transparent"
           }`}
         initial={{ y: -100, opacity: 0 }}

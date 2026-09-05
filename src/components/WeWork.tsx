@@ -6,7 +6,6 @@ import { BsDoorOpen } from "react-icons/bs";
 import { GoStopwatch } from "react-icons/go";
 import { HiOutlineLightBulb } from "react-icons/hi";
 import { MdOutlineTableRestaurant } from "react-icons/md";
-import Slider from "react-slick";
 
 const steps = [
   {
@@ -45,27 +44,27 @@ const logos = [
   { image: "/client3.png" },
   { image: "/client4.png" },
   { image: "/client5.png" },
+   { image: "/client1.png" },
+  { image: "/client2.png" },
+  { image: "/client3.png" },
+  { image: "/client4.png" },
+  { image: "/client5.png" },
+   { image: "/client1.png" },
+  { image: "/client2.png" },
+  { image: "/client3.png" },
+  { image: "/client4.png" },
+  { image: "/client5.png" },
+   { image: "/client1.png" },
+  { image: "/client2.png" },
+  { image: "/client3.png" },
+  { image: "/client4.png" },
+  { image: "/client5.png" },
 ];
 
-const sliderSettings = {
-  dots: false,
-  infinite: true,
-  slidesToShow: 4,
-  slidesToScroll: 1,
-  autoplay: true,
-  speed: 2000,
-  autoplaySpeed: 0,
-  cssEase: "linear",
-  pauseOnHover: false,
-  arrows: false,
-  responsive: [
-    { breakpoint: 1024, settings: { slidesToShow: 3 } },
-    { breakpoint: 768, settings: { slidesToShow: 2 } },
-    { breakpoint: 480, settings: { slidesToShow: 1 } },
-  ],
-};
-
 export default function WeWork() {
+  // Duplicate the logos array so the marquee can loop seamlessly
+  const marqueeLogos = [...logos, ...logos];
+
   return (
     <section className="bg-[#0d0d0d] py-24 lg:py-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-5">
@@ -99,7 +98,7 @@ export default function WeWork() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             A refined four-step process that transforms your brief into a
-            beautifully finished space — with clarity at every stage.
+            beautifully finished space - with clarity at every stage.
           </motion.p>
         </div>
 
@@ -118,7 +117,7 @@ export default function WeWork() {
                 <span className="text-[#C9A96E]/80 text-xs tracking-[0.2em] font-medium uppercase">
                   {step.step}
                 </span>
-                <div className="w-10 h-10 border border-white/50 rounded-full flex items-center justify-center group-hover:border-[#C9A96E]/50 transition-colors duration-500">
+                <div className="w-10 h-10 border border-white/100 rounded-full flex items-center justify-center group-hover:border-[#C9A96E]/50 transition-colors duration-500">
                   <span className="text-white/80 group-hover:text-[#C9A96E] transition-colors duration-500">
                     {step.icon}
                   </span>
@@ -136,29 +135,27 @@ export default function WeWork() {
         {/* Divider */}
         <div className="w-full h-px bg-white/10 mb-16" />
 
-        {/* Logo Slider */}
+        {/* Logo Marquee (pure CSS, no external slider package) */}
         <div className="flex items-center gap-6 sm:gap-8">
           <span className="text-white/80 text-xs tracking-[0.2em] uppercase whitespace-nowrap flex-shrink-0">
             Trusted by
           </span>
-          <div className="flex-1 overflow-hidden">
-            <Slider {...sliderSettings}>
-              {logos.map((logo, i) => (
-                <div key={i} className="px-4 sm:px-6">
-                  {/* Fixed-height container equalizes all logos */}
-                  <div className="h-16 flex items-center justify-center">
-                    {/* ✅ width+height props used instead of fill — works correctly inside react-slick */}
+          <div className="flex-1 overflow-hidden group/marquee">
+            <div className="flex w-max animate-marquee group-hover/marquee:[animation-play-state:paused]">
+              {marqueeLogos.map((logo, i) => (
+                <div key={i} className="px-1.5 flex-shrink-0">
+                  <div className="h-32 flex items-center justify-center">
                     <Image
                       src={logo.image}
                       alt="Client logo"
                       width={120}
                       height={64}
-                      className="h-full w-auto max-w-[120px] object-contain opacity-30 hover:opacity-60 transition-opacity duration-300 filter grayscale"
+                      className="h-full w-auto max-w-[320px] object-contain transition-opacity duration-300 filter"
                     />
                   </div>
                 </div>
               ))}
-            </Slider>
+            </div>
           </div>
         </div>
 

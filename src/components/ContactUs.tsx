@@ -312,7 +312,7 @@ export default function ContactUs() {
                         </motion.h2>
                     </div>
                     <motion.p
-                        className="text-white/40 text-base leading-relaxed max-w-sm"
+                        className="text-white/70 text-base leading-relaxed max-w-sm"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
@@ -351,7 +351,7 @@ export default function ContactUs() {
 
                         {/* Contact details */}
                         <div className="flex flex-col gap-6">
-                            <h3 className="text-white/20 text-xs tracking-[0.25em] uppercase">
+                            <h3 className="text-white/50 text-xs tracking-[0.25em] uppercase">
                                 Reach Out
                             </h3>
                             {contactInfo.map((item, i) => (
@@ -363,11 +363,11 @@ export default function ContactUs() {
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.6, delay: i * 0.1 }}
                                 >
-                                    <div className="w-8 h-8 border border-white/10 rounded-full flex items-center justify-center text-white/30 flex-shrink-0 mt-0.5 group-hover:border-[#C9A96E]/40 group-hover:text-[#C9A96E] transition-all duration-300">
+                                    <div className="w-8 h-8 border border-white/40 rounded-full flex items-center justify-center text-white/30 flex-shrink-0 mt-0.5 group-hover:border-[#C9A96E]/40 group-hover:text-[#C9A96E] transition-all duration-300">
                                         {item.icon}
                                     </div>
                                     <div>
-                                        <p className="text-white/20 text-xs tracking-wider uppercase mb-0.5">
+                                        <p className="text-white/40 text-xs tracking-wider uppercase mb-0.5">
                                             {item.label}
                                         </p>
                                         {item.href ? (
@@ -388,8 +388,8 @@ export default function ContactUs() {
                         </div>
 
                         {/* Working hours */}
-                        <div className="border-t border-white/5 pt-8 flex flex-col gap-3">
-                            <h3 className="text-white/20 text-xs tracking-[0.25em] uppercase mb-2">
+                        <div className="border-t border-white/10 pt-8 flex flex-col gap-3">
+                            <h3 className="text-white/80 text-xs tracking-[0.25em] uppercase mb-2">
                                 Studio Hours
                             </h3>
                             {[
@@ -397,8 +397,8 @@ export default function ContactUs() {
                                 { day: "Sunday", hours: "By Appointment" },
                             ].map((row, i) => (
                                 <div key={i} className="flex justify-between items-center">
-                                    <span className="text-white/40 text-sm">{row.day}</span>
-                                    <span className="text-white/60 text-sm">{row.hours}</span>
+                                    <span className="text-white/60 text-sm">{row.day}</span>
+                                    <span className="text-white/80 text-sm">{row.hours}</span>
                                 </div>
                             ))}
                         </div>
@@ -542,9 +542,9 @@ export default function ContactUs() {
                                             </AnimatePresence>
                                         </motion.button>
 
-                                        <p className="text-white/20 text-xs leading-relaxed">
+                                        <p className="text-white/60 text-xs leading-relaxed">
                                             We typically respond within{" "}
-                                            <span className="text-white/40">24 hours.</span>
+                                            <span className="text-white/80">24 hours.</span>
                                             <br />
                                             Your information is kept confidential.
                                         </p>

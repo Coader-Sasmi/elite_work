@@ -56,7 +56,7 @@ export default function page() {
     },
   ];
   return (
-    <aside className="main-container py-10 flex flex-col gap-6">
+    <aside className="max-w-7xl mx-auto px-5 text-white/70 py-10 flex flex-col gap-6">
       <p>
         <span className="font-semibold">Elite Work</span>
         is committed to maintaining the privacy of our {`users'`} information.
@@ -73,7 +73,7 @@ export default function page() {
         </p>
         {InfoArr?.map((curElm, i) => (
           <div key={i} className="flex gap-2 items-center">
-            <div className="bg-secondary h-2 w-2"></div>
+            <div className="bg-yellow-600 h-2 w-2"></div>
             <p>
               <span className="font-semibold">{curElm?.title}</span>{" "}
               {curElm?.des}
@@ -95,7 +95,7 @@ export default function page() {
         </p>
         {PaymentArr?.map((curElm, i) => (
           <div key={i} className="flex gap-2 items-center">
-            <div className="bg-secondary h-2 w-2"></div>
+            <div className="bg-yellow-600 h-2 w-2"></div>
             <p>
               <span className="font-semibold">{curElm?.title}</span>{" "}
               {curElm?.des}
@@ -120,7 +120,7 @@ export default function page() {
         </p>
         {ShareInfoArr?.map((curElm, i) => (
           <div key={i} className="flex gap-2 items-center">
-            <div className="bg-secondary h-2 w-2"></div>
+            <div className="bg-yellow-600 h-2 w-2"></div>
             <p>
               <span className="font-semibold">{curElm?.title}</span>{" "}
               {curElm?.des}
@@ -193,7 +193,7 @@ export default function page() {
       <section className="flex flex-col gap-4">
         {referencefoArr?.map((curElm, i) => (
           <div key={i} className="flex gap-2 items-center">
-            <div className="bg-secondary h-2 w-2"></div>
+            <div className="bg-yellow-600 h-2 w-2"></div>
             <p>
               <span className="font-semibold">{curElm?.title}</span>{" "}
               {curElm?.des}
