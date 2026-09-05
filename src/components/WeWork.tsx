@@ -14,7 +14,7 @@ const steps = [
     step: "Step 01",
     title: "Initial Consultation",
     subTitle:
-      "We meet to understand your vision, preferences, budget, and timeline — setting the foundation for everything that follows.",
+      "We meet to understand your vision, preferences, budget, and timeline - setting the foundation for everything that follows.",
   },
   {
     icon: <BsDoorOpen className="text-2xl" />,
@@ -28,7 +28,7 @@ const steps = [
     step: "Step 03",
     title: "Project Execution",
     subTitle:
-      "We coordinate every vendor, craftsperson, and timeline with meticulous precision — so you don't have to.",
+      "We coordinate every vendor, craftsperson, and timeline with meticulous precision - so you don't have to.",
   },
   {
     icon: <MdOutlineTableRestaurant className="text-2xl" />,
@@ -92,7 +92,7 @@ export default function WeWork() {
             </motion.h2>
           </div>
           <motion.p
-            className="text-white/40 text-base leading-relaxed max-w-sm"
+            className="text-white/70 text-base leading-relaxed max-w-sm"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -104,7 +104,7 @@ export default function WeWork() {
         </div>
 
         {/* Steps */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/5 mb-24">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 mb-24">
           {steps.map((step, i) => (
             <motion.div
               key={i}
@@ -115,11 +115,11 @@ export default function WeWork() {
               transition={{ duration: 0.7, delay: i * 0.1 }}
             >
               <div className="flex items-center justify-between">
-                <span className="text-[#C9A96E]/30 text-xs tracking-[0.2em] font-medium uppercase">
+                <span className="text-[#C9A96E]/80 text-xs tracking-[0.2em] font-medium uppercase">
                   {step.step}
                 </span>
-                <div className="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center group-hover:border-[#C9A96E]/30 transition-colors duration-500">
-                  <span className="text-white/30 group-hover:text-[#C9A96E] transition-colors duration-500">
+                <div className="w-10 h-10 border border-white/50 rounded-full flex items-center justify-center group-hover:border-[#C9A96E]/50 transition-colors duration-500">
+                  <span className="text-white/80 group-hover:text-[#C9A96E] transition-colors duration-500">
                     {step.icon}
                   </span>
                 </div>
@@ -127,18 +127,18 @@ export default function WeWork() {
               <div className="w-8 h-px bg-[#C9A96E]/30 group-hover:w-16 group-hover:bg-[#C9A96E] transition-all duration-500" />
               <div className="flex flex-col gap-3">
                 <h3 className="text-white text-lg font-light">{step.title}</h3>
-                <p className="text-white/40 text-sm leading-relaxed">{step.subTitle}</p>
+                <p className="text-white/60 text-sm leading-relaxed">{step.subTitle}</p>
               </div>
             </motion.div>
           ))}
         </div>
 
         {/* Divider */}
-        <div className="w-full h-px bg-white/5 mb-16" />
+        <div className="w-full h-px bg-white/10 mb-16" />
 
         {/* Logo Slider */}
         <div className="flex items-center gap-6 sm:gap-8">
-          <span className="text-white/20 text-xs tracking-[0.2em] uppercase whitespace-nowrap flex-shrink-0">
+          <span className="text-white/80 text-xs tracking-[0.2em] uppercase whitespace-nowrap flex-shrink-0">
             Trusted by
           </span>
           <div className="flex-1 overflow-hidden">

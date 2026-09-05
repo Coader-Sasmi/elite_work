@@ -4,13 +4,13 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 
 export default function Project() {
-  const categories = ["All", "Architecture", "Bedroom", "Kitchen", "Living Space"];
+  const categories = ["All", "Bedroom", "Kitchen", "Living Space"];
   const [activeCategory, setActiveCategory] = useState("All");
 
   const projectArr = [
     {
       image: "project_1.jpg",
-      category: "Architecture",
+      category: "Living Space",
       title: "Urban Retreat",
       subTitle: "Modern Design Meets Comfort",
       size: "large",
@@ -80,7 +80,7 @@ export default function Project() {
                 whileTap={{ scale: 0.96 }}
                 className={`px-5 py-2 text-xs tracking-[0.15em] uppercase transition-all duration-300 ${activeCategory === cat
                     ? "bg-[#C9A96E] text-[#0a0a0a] font-semibold"
-                    : "border border-white/10 text-white/40 hover:text-white hover:border-white/30"
+                    : "border text-white border-white/30 hover:border-white/50"
                   }`}
               >
                 {cat}
@@ -136,7 +136,7 @@ export default function Project() {
                     initial={false}
                   >
                     <h3 className="text-white text-2xl font-light mb-1">{project.title}</h3>
-                    <p className="text-white/50 text-sm">{project.subTitle}</p>
+                    {/* <p className="text-white/50 text-sm">{project.subTitle}</p> */}
                   </motion.div>
 
                   {/* Gold line that slides in on hover */}
@@ -153,7 +153,7 @@ export default function Project() {
         </motion.div>
 
         {/* View all */}
-        <motion.div
+        {/* <motion.div
           className="flex justify-center mt-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -167,7 +167,7 @@ export default function Project() {
             View All Projects
             <span className="w-12 h-px bg-white/20 group-hover:w-20 group-hover:bg-[#C9A96E] transition-all duration-500" />
           </motion.button>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );
