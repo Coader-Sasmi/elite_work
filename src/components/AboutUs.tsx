@@ -51,21 +51,20 @@ export default function AboutUs() {
 
             {/* Second image — floating */}
             <motion.div
-              className="absolute -bottom-12 right-6 lg:-right-12 w-48 lg:w-64 pointer-events-none"
+              className="absolute -bottom-20 right-6 lg:-right-16 w-48 lg:w-64 pointer-events-none"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.9, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             >
-              <div className="relative w-full h-40 lg:h-52">
+              <div className="relative w-full h-72">
                 <Image
-                  src="/about_img_2.jpg"
+                  src="/founder.webp"
                   alt="Interior design detail"
                   fill
-                  className="object-cover shadow-2xl"
+                  className="object-contain shadow-2xl"
                 />
               </div>
-              <div className="absolute inset-0 border border-[#C9A96E]/30 pointer-events-none" />
             </motion.div>
 
             {/* Badge */}
@@ -127,9 +126,14 @@ export default function AboutUs() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <p>
-                Our dedicated team of designers works closely with you to understand
-                your vision and bring it to life with thoughtful attention to detail.
-                Whether it&apos;s transforming a single room or an entire home.{" "}
+
+                Built on experience. Continued by the next generation.<br/>
+
+                Elite Work is built on a foundation of 25+ years of hands-on experience in interior contracting and execution.<br/>
+
+                Our founder, Ram Kripal Yadav, began his journey in Bengaluru in 2001. Over the years, he took on countless projects, including major contracts for reputed companies, specializing in false ceilings, carpentry, and interior execution.<br/>
+
+                Today, his experience continues through Elite Work, founded to bring his decades of craftsmanship to a modern audience. As his son, {" "}
                 <AnimatePresence mode="wait" initial={false}>
                   {isExpanded ? (
                     <motion.span
@@ -139,14 +143,11 @@ export default function AboutUs() {
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.4 }}
                     >
-                      Elite Work is your go-to destination for exceptional home
-                      interior design in Bengaluru. Our expert team brings creativity
-                      and precision to every project, transforming homes into
-                      personalized havens. From modern to timeless, minimalist to
-                      luxurious - we cater to all styles, ensuring your space reflects
-                      your unique taste. We handle everything from the first concept
-                      to the final detail, so you can enjoy a seamless and inspiring
-                      design journey.
+                    Raj Kumar R, I work alongside him to carry forward that experience with a professional approach and complete interior solutions.<br/>
+
+                    No middlemen. No unnecessary layers. We take projects directly from our clients and handle the execution ourselves, giving you better communication, greater accountability, and complete control over the work.<br/>
+
+                    From one generation to the next, our goal remains the same: quality work, honest execution, and spaces built to last.
                     </motion.span>
                   ) : (
                     <motion.span
@@ -191,13 +192,13 @@ export default function AboutUs() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <button
+              {/* <button
                 type="button"
                 onClick={() => setIsExpanded((prev) => !prev)}
                 className="relative z-20 cursor-pointer text-[#C9A96E] text-sm font-medium tracking-[0.1em] uppercase border-b border-[#C9A96E]/30 pb-0.5 hover:border-[#C9A96E] transition-colors duration-300"
               >
                 {isExpanded ? "Show Less" : "Our Story"}
-              </button>
+              </button> */}
               <Link href="tel:+917406299605">
                 <div className="flex items-center gap-3 group">
                   <div className="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center group-hover:border-[#C9A96E]/40 transition-colors duration-300">
@@ -213,7 +214,7 @@ export default function AboutUs() {
 
             {/* Founders */}
             <motion.div
-              className="pt-4 border-t border-white/30 flex flex-col gap-4"
+              className="pt-4 border-t border-white/30 flex md:flex-row justify-between flex-col gap-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -224,10 +225,10 @@ export default function AboutUs() {
                 { name: "Raj Kumar R", role: "Co-Founder & Managing Director" },
               ].map((person, i) => (
                 <div key={i} className="flex items-center gap-3">
-                  <CgProfile className="text-3xl text-[#C9A96E]/60" />
+                  <CgProfile className="text-3xl text-[#C9A96E]/90" />
                   <div>
-                    <p className="text-white text-sm font-medium">{person.name}</p>
-                    <p className="text-white/60 text-xs">{person.role}</p>
+                    <p className="text-white font-medium">{person.name}</p>
+                    <p className="text-white/70 text-sm">{person.role}</p>
                   </div>
                 </div>
               ))}
