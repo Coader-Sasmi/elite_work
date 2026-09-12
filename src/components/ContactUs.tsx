@@ -335,7 +335,7 @@ export default function ContactUs() {
                         transition={{ duration: 0.9 }}
                     >
                         {/* Decorative image */}
-                        <div className="relative overflow-hidden h-72">
+                        <div className="relative overflow-hidden h-60">
                             <Image
                                 src="/office.webp"
                                 alt="Elite Work Studio"
