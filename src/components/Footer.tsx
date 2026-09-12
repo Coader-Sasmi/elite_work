@@ -100,7 +100,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-white/80 text-sm leading-relaxed">
-              Bengaluru&apos;s premier interior design studio, crafting extraordinary spaces since 1988.
+              Bengaluru&apos;s premier interior design studio, crafting extraordinary spaces since 2001.
             </p>
             {/* Socials */}
             <div className="flex gap-3">

@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 
 export default function Project() {
-  const categories = ["All", "Bedroom", "Kitchen", "Living Space"];
+  const categories = ["All", "Living Space", "Kitchen", "Bedroom", ];
   const [activeCategory, setActiveCategory] = useState("All");
 
   const projectArr = [

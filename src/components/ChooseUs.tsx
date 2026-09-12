@@ -87,21 +87,21 @@ export default function ChooseUs() {
                 >
                   {/* Number + icon */}
                   <div className="flex flex-col items-center gap-2 flex-shrink-0">
-                    <span className="text-[#C9A96E] text-xs font-medium tracking-wider">
+                    {/* <span className="text-[#C9A96E] text-xs font-medium tracking-wider">
                       {item.number}
-                    </span>
+                    </span> */}
                     <div className="w-10 h-10 border border-white/70 group-hover:border-[#C9A96E]/80 rounded-full flex items-center justify-center transition-colors duration-500">
                       <span className="text-white/70 group-hover:text-[#C9A96E] transition-colors duration-500">
                         {item.icon}
                       </span>
                     </div>
                     {i < features.length - 1 && (
-                      <div className="flex-1 w-px bg-white/5 h-8" />
+                      <div className="flex-1 w-px bg-white/10 h-8" />
                     )}
                   </div>
 
                   {/* Text */}
-                  <div className="flex flex-col gap-2 pt-2">
+                  <div className="flex flex-col gap-2">
                     <h3 className="text-white text-base font-medium">{item.title}</h3>
                     <p className="text-white/70 text-sm leading-relaxed">{item.subTitle}</p>
                   </div>

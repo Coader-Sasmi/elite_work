@@ -337,7 +337,7 @@ export default function ContactUs() {
                         {/* Decorative image */}
                         <div className="relative overflow-hidden h-72">
                             <Image
-                                src="/about_img_1.jpg"
+                                src="/office.webp"
                                 alt="Elite Work Studio"
                                 fill
                                 className="object-cover"
@@ -363,11 +363,11 @@ export default function ContactUs() {
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.6, delay: i * 0.1 }}
                                 >
-                                    <div className="w-8 h-8 border border-white/40 rounded-full flex items-center justify-center text-white/30 flex-shrink-0 mt-0.5 group-hover:border-[#C9A96E]/40 group-hover:text-[#C9A96E] transition-all duration-300">
+                                    <div className="w-8 h-8 border border-white/70 rounded-full flex items-center justify-center text-white/70 flex-shrink-0 mt-0.5 group-hover:border-[#C9A96E]/70 group-hover:text-[#C9A96E] transition-all duration-300">
                                         {item.icon}
                                     </div>
                                     <div>
-                                        <p className="text-white/40 text-xs tracking-wider uppercase mb-0.5">
+                                        <p className="text-white/80 text-xs tracking-wider uppercase mb-0.5">
                                             {item.label}
                                         </p>
                                         {item.href ? (
