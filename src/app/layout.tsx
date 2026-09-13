@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.elitework.in'),
   title: "Elite Work | Premium Interior Design",
   description:
     "Elite Work is a premium interior design studio crafting elegant, functional spaces tailored to your lifestyle. From concept to completion, we transform homes and offices into stunning environments.",
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
     title: "Elite Work | Premium Interior Design",
     description:
       "Transform your space with Elite Work — where creativity meets craftsmanship. Explore our interior design services for homes and offices.",
-    url: "https://www.elitework.in/",
+    url: "https://www.elitework.in",
     siteName: "Elite Work",
     images: [
       {
