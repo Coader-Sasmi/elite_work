@@ -23,7 +23,7 @@ export default function Services() {
       tag: "Painting",
     },
     {
-      image: "./service/service_4.webp",
+      image: "./service/service_4.jpeg",
       subtitle: ["Electrical Wiring", "Lighting Installation", "Switches & Sockets", "Fan Installation", "Electrical Fixtures"],
       tag: "Electrical Works",
     },

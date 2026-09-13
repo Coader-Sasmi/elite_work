@@ -3,26 +3,21 @@
 import Image from "next/image";
 
 const logos = [
-  { image: "/client1.png" },
-  { image: "/client2.png" },
-  { image: "/client3.png" },
-  { image: "/client4.png" },
-  { image: "/client5.png" },
-   { image: "/client1.png" },
-  { image: "/client2.png" },
-  { image: "/client3.png" },
-  { image: "/client4.png" },
-  { image: "/client5.png" },
-   { image: "/client1.png" },
-  { image: "/client2.png" },
-  { image: "/client3.png" },
-  { image: "/client4.png" },
-  { image: "/client5.png" },
-   { image: "/client1.png" },
-  { image: "/client2.png" },
-  { image: "/client3.png" },
-  { image: "/client4.png" },
-  { image: "/client5.png" },
+  { image: "/partners/client1.png" },
+  { image: "/partners/client2.png" },
+  { image: "/partners/client3.png" },
+  { image: "/partners/client4.png" },
+  { image: "/partners/client5.png" },
+   { image: "/partners/client6.jpeg" },
+  { image: "/partners/client7.jpeg" },
+  { image: "/partners/client8.jpeg" },
+  { image: "/partners/client9.jpeg" },
+  { image: "/partners/client10.jpeg" },
+   { image: "/partners/client11.jpeg" },
+  { image: "/partners/client12.jpeg" },
+  { image: "/partners/client13.jpeg" },
+  { image: "/partners/client14.jpeg" },
+  { image: "/partners/client15.jpeg" },
 ];
 
 export default function TrustedBy() {
@@ -35,14 +30,14 @@ export default function TrustedBy() {
 
         {/* Logo Marquee (pure CSS, no external slider package) */}
         <div className="flex items-center gap-6 sm:gap-8">
-          <span className="text-white/80 text-xs tracking-[0.2em] uppercase whitespace-nowrap flex-shrink-0">
-            Trusted by
+          <span className="text-white/90 text-sm tracking-wide font-semibold uppercase whitespace-nowrap flex-shrink-0">
+            BRANDS & COMMUNITIES<br/> WE WORK WITH
           </span>
           <div className="flex-1 overflow-hidden group/marquee">
             <div className="flex w-max animate-marquee group-hover/marquee:[animation-play-state:paused]">
               {marqueeLogos.map((logo, i) => (
                 <div key={i} className="px-1.5 flex-shrink-0">
-                  <div className="h-32 flex items-center justify-center">
+                  <div className="h-40 flex items-center justify-center">
                     <Image
                       src={logo.image}
                       alt="Client logo"
