@@ -1,52 +1,42 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { MdArrowRightAlt } from "react-icons/md";
 
 export default function Services() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  const serviceArr = [
+  const servicesArr = [
     {
-      image: "./service_1.jpg",
-      number: "01",
-      title: "Residential Interior Design",
-      subTitle: "Personalized living spaces crafted around your lifestyle, taste, and functional needs.",
-      tag: "Homes & Apartments",
+      image: "./service/service_1.JPG",
+      subtitle: ["Gypsum Ceiling", "Grid Ceiling", "PVC Ceiling", "Ceiling Partition"],
+      tag: "False Ceiling",
     },
     {
-      image: "./service_2.jpg",
-      number: "02",
-      title: "Commercial Interior Design",
-      subTitle: "Elevating business environments with professional spaces that inspire productivity.",
-      tag: "Offices & Retail",
+      image: "./service/service_2.JPG",
+      subtitle: ["Modular Kitchen", "Wardrobes", "TV Units", "Custom Furniture", "Dining Tables"],
+      tag: "Carpentry",
     },
     {
-      image: "./service_3.jpg",
-      number: "03",
-      title: "Furniture & Decor Curation",
-      subTitle: "Handpicked furniture and decor selections that complement your unique aesthetic.",
-      tag: "Styling & Selection",
+      image: "./service/service_3.webp",
+      subtitle: ["Interior Painting", "Exterior Painting", "Wall Texture", "Putty & Primer", "Wood Polishing"],
+      tag: "Painting",
     },
     {
-      image: "./service_1.jpg",
-      number: "04",
-      title: "Renovation & Turnkey Projects",
-      subTitle: "Complete transformation from concept to completion - we handle every detail.",
-      tag: "Full Renovations",
+      image: "./service/service_4.webp",
+      subtitle: ["Electrical Wiring", "Lighting Installation", "Switches & Sockets", "Fan Installation", "Electrical Fixtures"],
+      tag: "Electrical Works",
     },
   ];
 
+  const active = servicesArr[activeIndex];
+
   return (
-    <section
-      id="services"
-      className="bg-[#0d0d0d] py-24 lg:py-32"
-    >
+    <section id="services" className="bg-[#0d0d0d] py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-5">
 
         {/* Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16 lg:mb-20">
           <div className="flex flex-col gap-6 max-w-xl">
             <div className="flex items-center gap-4">
               <div className="w-8 h-px bg-[#C9A96E]" />
@@ -67,7 +57,7 @@ export default function Services() {
             </motion.h2>
           </div>
           <motion.p
-            className="text-white/80 text-base leading-relaxed max-w-lg"
+            className="text-white/70 text-base leading-relaxed max-w-lg"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -78,88 +68,82 @@ export default function Services() {
           </motion.p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid md:grid-cols-2 gap-px bg-white/5">
-          {serviceArr.map((item, i) => (
-            <motion.div
-              key={i}
-              className="relative overflow-hidden group cursor-pointer bg-[#0d0d0d]"
-              style={{ height: "420px" }}
-              onHoverStart={() => setHoveredIndex(i)}
-              onHoverEnd={() => setHoveredIndex(null)}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: i * 0.1 }}
-            >
-              {/* Background image */}
-              <motion.div
-                className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: `url(${item.image})` }}
-                animate={{ scale: hoveredIndex === i ? 1.06 : 1 }}
-                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              />
-
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/60 to-[#0a0a0a]/10" />
-              <motion.div
-                className="absolute inset-0 bg-[#C9A96E]/10"
-                animate={{ opacity: hoveredIndex === i ? 1 : 0 }}
-                transition={{ duration: 0.5 }}
-              />
-
-              {/* Content */}
-              <div className="absolute inset-0 p-8 flex flex-col justify-between">
-                <div className="flex items-start justify-between">
-                  <span className="text-[#C9A96E] text-xs tracking-[0.2em] font-medium uppercase">
-                    {item.tag}
-                  </span>
-                  <motion.div
-                    className="w-10 h-10 border border-white/20 rounded-full flex items-center justify-center"
-                    animate={{
-                      rotate: hoveredIndex === i ? 45 : -45,
-                      borderColor: hoveredIndex === i ? "#C9A96E" : "rgba(255,255,255,0.2)",
-                    }}
-                    transition={{ duration: 0.4 }}
-                  >
-                    <MdArrowRightAlt className="text-white text-lg" />
-                  </motion.div>
-                </div>
-
-                <div className="flex flex-col gap-3">
-                  <span className="text-white/50 text-6xl font-light leading-none">
-                    {item.number}
-                  </span>
-                  <h3 className="text-white text-xl font-light">{item.title}</h3>
-                  <motion.p
-                    className="text-white/70 text-sm leading-relaxed max-w-xs"
-                    animate={{ opacity: hoveredIndex === i ? 1 : 0.6 }}
-                    transition={{ duration: 0.4 }}
-                  >
-                    {item.subTitle}
-                  </motion.p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Bottom CTA */}
+        {/* Services */}
         <motion.div
-          className="flex justify-center mt-16"
-          initial={{ opacity: 0, y: 20 }}
+          className="grid lg:grid-cols-[minmax(0,420px)_1fr] gap-10 lg:gap-16 items-start"
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         >
-          {/* <motion.button
-            whileHover={{ scale: 1.03, backgroundColor: "#D4B87A" }}
-            whileTap={{ scale: 0.97 }}
-            className="px-10 py-4 bg-[#C9A96E] text-[#0a0a0a] text-sm font-semibold tracking-[0.15em] uppercase transition-colors duration-300"
-          >
-            View All Services
-          </motion.button> */}
+          {/* List */}
+          <div className="flex flex-col border-t border-white/10">
+            {servicesArr.map((item, i) => {
+              const isActive = i === activeIndex;
+              return (
+                <button
+                  key={item.tag + i}
+                  type="button"
+                  onMouseEnter={() => setActiveIndex(i)}
+                  onClick={() => setActiveIndex(i)}
+                  className="group text-left border-b border-white/10 py-6 lg:py-7 flex items-start gap-5"
+                >
+                  <span
+                    className={` mt-1.5 tabular-nums transition-colors duration-300 ${
+                      isActive ? "text-[#C9A96E]" : "text-white/60"
+                    }`}
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+
+                  <div className="flex-1">
+                    <h3
+                      className={`text-2xl lg:text-[1.75rem] font-light transition-colors duration-300 ${
+                        isActive ? "text-white" : "text-white/60 group-hover:text-white/70"
+                      }`}
+                    >
+                      {item.tag}
+                    </h3>
+
+                    <AnimatePresence initial={false}>
+                      {isActive && (
+                        <motion.p
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                          className="text-white/70 leading-relaxed mt-2 overflow-hidden font-medium"
+                        >
+                          {item.subtitle.join(", ")}
+                        </motion.p>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Image panel */}
+          <div className="relative w-full h-[320px] lg:h-[460px] overflow-hidden">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={active.tag}
+                className="absolute inset-0 bg-cover bg-center"
+                style={{ backgroundImage: `url(${active.image})` }}
+                initial={{ opacity: 0, scale: 1.06 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              />
+            </AnimatePresence>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+            <span className="absolute bottom-5 left-5 text-[#CEB27D] text-xs tracking-[0.2em] uppercase">
+              {active.tag}
+            </span>
+          </div>
         </motion.div>
+
       </div>
     </section>
   );
