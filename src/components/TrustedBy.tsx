@@ -29,8 +29,8 @@ export default function TrustedBy() {
       <div className="max-w-7xl mx-auto px-5">
 
         {/* Logo Marquee (pure CSS, no external slider package) */}
-        <div className="flex items-center gap-6 sm:gap-8">
-          <span className="text-white/90 text-sm tracking-wide font-semibold uppercase whitespace-nowrap flex-shrink-0">
+        <div className="flex md:flex-row flex-col md:items-center gap-6 sm:gap-8">
+          <span className="text-white/90 md:text-sm tracking-wide font-semibold uppercase whitespace-nowrap flex-shrink-0">
             BRANDS & COMMUNITIES<br/> WE WORK WITH
           </span>
           <div className="flex-1 overflow-hidden group/marquee">
