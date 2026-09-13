@@ -287,7 +287,7 @@ export default function ContactUs() {
     };
 
     return (
-        <section id="contact" className="bg-[#0a0a0a] py-24 lg:py-32 overflow-hidden">
+        <section id="contact" className="bg-[#0a0a0a] py-16 overflow-hidden">
             <div className="max-w-7xl mx-auto px-5">
 
                 {/* ── Header ── */}

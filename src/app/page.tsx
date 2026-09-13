@@ -12,6 +12,7 @@ import {
   WeWork
 } from "@/components";
 import ContactUs from "@/components/ContactUs";
+import TrustedBy from "@/components/TrustedBy";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       {/* <PriceSec /> */}
       <WeWork />
       <Skills />
+      <TrustedBy/>
       <Testimonial />
       <ContactUs />
       {/* <News /> */}

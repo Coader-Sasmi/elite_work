@@ -120,7 +120,7 @@ const filtered = activeCategory === "All"
   return (
     <section
       id="projects"
-      className="bg-[#0a0a0a] py-24 lg:py-32"
+      className="bg-[#0a0a0a] py-16"
     >
       <div className="max-w-7xl mx-auto px-5">
 

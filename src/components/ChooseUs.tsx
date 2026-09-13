@@ -1,7 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useInView, useMotionValue, useTransform, animate } from "framer-motion";
 import Image from "next/image";
+import { useEffect, useRef } from "react";
 import { BsDoorOpen } from "react-icons/bs";
 import { GiWoodenChair } from "react-icons/gi";
 import { MdOutlineDesignServices } from "react-icons/md";
@@ -45,9 +46,63 @@ const images = [
   { src: "/why_choose_4.jpg", span: "lg:col-span-7 col-span-12" },
 ];
 
+const stats = [
+  { value: "1650+", label: "Projects Delivered" },
+  { value: "25+", label: "Years of Experience" },
+  { value: "87%", label: "Client Retention" },
+  // { value: "12+", label: "Design Awards" },
+];
+
+// Animates the numeric part of a stat value (e.g. "1650" in "1650+") from 0
+// up to its target once the element scrolls into view. Non-numeric suffixes
+// like "+" or "%" are preserved as-is.
+function CountUpStat({ value, label }: { value: string; label: string }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: false, margin: "-100px" });
+
+  const match = value.match(/^(\d+)(.*)$/);
+  const target = match ? parseInt(match[1], 10) : 0;
+  const suffix = match ? match[2] : "";
+
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (latest) => Math.round(latest));
+
+  useEffect(() => {
+    if (isInView) {
+      const controls = animate(count, target, {
+        duration: 1.8,
+        ease: [0.16, 1, 0.3, 1],
+      });
+      return controls.stop;
+    }
+    // Reset to 0 when it scrolls out of view so it counts up again next time
+    count.set(0);
+  }, [isInView, target, count]);
+
+  useEffect(() => {
+    const unsubscribe = rounded.on("change", (latest) => {
+      if (ref.current) {
+        ref.current.textContent = `${latest}${suffix}`;
+      }
+    });
+    return unsubscribe;
+  }, [rounded, suffix]);
+
+  return (
+    <div className="bg-[#111111] px-8 py-10 flex flex-col gap-2">
+      <span ref={ref} className="text-4xl font-semibold text-white font-bold">
+        0{suffix}
+      </span>
+      <span className="text-white/70 text-xs font-medium tracking-[0.15em] uppercase">
+        {label}
+      </span>
+    </div>
+  );
+}
+
 export default function ChooseUs() {
   return (
-    <section className="bg-[#111111] py-24 lg:py-32">
+    <section className="bg-[#111111] py-16">
       <div className="max-w-7xl mx-auto px-5">
 
         {/* Header */}
@@ -144,22 +199,14 @@ export default function ChooseUs() {
 
         {/* Stats bar */}
         <motion.div
-          className="mt-24 grid grid-cols-2 md:grid-cols-3 gap-px bg-white/30"
+          className="mt-16 grid grid-cols-2 md:grid-cols-3 gap-px bg-white/30"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          {[
-            { value: "1650+", label: "Projects Delivered" },
-            { value: "25+", label: "Years of Experience" },
-            { value: "87%", label: "Client Retention" },
-            // { value: "12+", label: "Design Awards" },
-          ].map((stat, i) => (
-            <div key={i} className="bg-[#111111] px-8 py-10 flex flex-col gap-2">
-              <span className="text-4xl font-light text-white font-bold">{stat.value}</span>
-              <span className="text-white/70 text-xs font-medium tracking-[0.15em] uppercase">{stat.label}</span>
-            </div>
+          {stats.map((stat, i) => (
+            <CountUpStat key={i} value={stat.value} label={stat.label} />
           ))}
         </motion.div>
       </div>

@@ -15,7 +15,7 @@ const skills = [
 export default function Skills() {
   return (
     <section
-      className="bg-[#0a0a0a] py-24 lg:py-32 overflow-hidden"
+      className="bg-[#0a0a0a] py-16 overflow-hidden"
       style={{ backgroundImage: "url('/skill_bg.png')", backgroundSize: "cover", backgroundPosition: "center" }}
     >
       <div className="max-w-7xl mx-auto px-5">
